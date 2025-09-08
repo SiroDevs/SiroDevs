@@ -3,9 +3,9 @@
 import { bio } from "@/data/bio";
 import Image from "next/image";
 import Link from "next/link";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import { FaHashnode, FaStrava, FaBlogger } from "react-icons/fa6";
-import { FaMedium, FaYoutubeSquare, FaTwitterSquare } from "react-icons/fa";
+import { FaMedium } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 
@@ -51,13 +51,6 @@ const HeroSection = () => {
               <BsGithub size={30} />
             </Link>
             <Link
-              href={bio.linkedIn}
-              target="_blank"
-              className="transition-all text-orange-500 hover:scale-125 duration-300"
-            >
-              <BsLinkedin size={30} />
-            </Link>
-            <Link
               href={bio.hashnode}
               target="_blank"
               className="transition-all text-orange-500 hover:scale-125 duration-300"
@@ -77,20 +70,6 @@ const HeroSection = () => {
               className="transition-all text-orange-500 hover:scale-125 duration-300"
             >
               <FaBlogger size={30} />
-            </Link>
-            <Link
-              href={bio.youtube}
-              target="_blank"
-              className="transition-all text-orange-500 hover:scale-125 duration-300"
-            >
-              <FaYoutubeSquare size={30} />
-            </Link>
-            <Link
-              href={bio.twitter}
-              target="_blank"
-              className="transition-all text-orange-500 hover:scale-125 duration-300"
-            >
-              <FaTwitterSquare size={30} />
             </Link>
             <Link
               href={bio.strava}
