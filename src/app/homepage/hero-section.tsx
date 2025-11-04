@@ -26,7 +26,7 @@ const HeroSection = () => {
   <span className="block">
     Hi there, welcome here. I am{" "}
     <Link href={bio.linkedIn} target="_blank" className="hover:underline hover:text-[#f97316] transition-colors">
-      <span className="text-[#22c55e]">Siro Jack</span>
+      <span className="text-[#22c55e]">Siro</span>
     </Link>, a{" "}
     <Link href={bio.github} target="_blank" className="hover:underline hover:text-[#fb923c] transition-colors">
       <span className="text-[#f97316]">{bio.designation1}</span>

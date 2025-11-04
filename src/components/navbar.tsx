@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
           <Link
             href="/"
             className="text-[#ea580c] text-3xl font-bold">
-            DEV SIRO
+            SIRO JACK
           </Link>
         </div>
 
