@@ -26,6 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8105117485391855"
      crossOrigin="anonymous"></script>
+        <meta name="google-site-verification" content="qlbPuZCF1n2VjGSBNw4SVHtIixwhAXYlmwMvy645GzA" />
       </head>
       <body className={inter.className}>
         <ToastContainer />
