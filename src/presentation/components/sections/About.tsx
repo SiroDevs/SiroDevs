@@ -2,7 +2,7 @@ import { Eyebrow, RedDot } from "@/presentation/components/ui/Eyebrow";
 
 export default function About() {
   return (
-    <section id="about" className="container-page py-5 sm:py-10">
+    <section id="about" className="container-page py-5 sm:py-5">
       <div className="space-y-10">
         <div>
           <Eyebrow>about</Eyebrow>

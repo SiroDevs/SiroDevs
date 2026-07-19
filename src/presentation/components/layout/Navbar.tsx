@@ -5,8 +5,8 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/presentation/components/theme/ThemeToggle";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
+  { href: "/#about", label: "About Me" },
+  { href: "/projects", label: "My Projects" },
 ];
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <nav className="container-page flex h-16 items-center justify-between">
         <a
-          href="#top"
+          href="/#top"
           className="font-display text-lg font-semibold tracking-tight text-ink dark:text-cloud"
         >
           SIRO
@@ -48,7 +48,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="rounded-full bg-brand px-5 py-2 font-mono text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
           >
             Contact Me
@@ -83,7 +83,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-brand px-5 py-3 text-center font-mono text-sm font-medium text-white"
             >

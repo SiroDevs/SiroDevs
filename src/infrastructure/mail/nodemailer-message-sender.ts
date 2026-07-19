@@ -17,6 +17,10 @@ function escapeHtml(input: string): string {
  * no third-party form service, no mailto: popup. Reads credentials from
  * env vars at send time, so a missing config fails loudly and specifically
  * rather than as a generic 500.
+ *
+ * Required env vars:
+ *  - GMAIL_USER: the sending Gmail address
+ *  - GMAIL_APP_PASSWORD: a Google Account App Password (not the login password)
  */
 export class NodemailerMessageSender implements MessageSender {
   async send(message: ContactMessage): Promise<void> {

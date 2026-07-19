@@ -3,7 +3,8 @@ export interface Experience {
   title: string;
   period: string;
   duration: string;
-  body: string;
+  /** Bullet points describing impact/responsibilities, rendered as a <ul>. */
+  bullets: string[];
   tags: string[];
 }
 
@@ -12,5 +13,7 @@ export interface EarlierExperience {
   company: string;
   title: string;
   period: string;
-  point: string;
+  /** Bullet points describing impact/responsibilities, rendered as a compact <ul>. */
+  bullets: string[];
+  tags: string[];
 }

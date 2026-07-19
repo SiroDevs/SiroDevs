@@ -1,9 +1,9 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, FolderGit2 } from "lucide-react";
 import { Card } from "@/presentation/components/ui/Card";
 import { Tag } from "@/presentation/components/ui/Tag";
 import { Eyebrow, RedDot } from "@/presentation/components/ui/Eyebrow";
 import { featuredProjects } from "@/infrastructure/content/projects.data";
-import { socialLinks } from "@/config/site";
 
 export default function Projects() {
   return (
@@ -17,7 +17,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-4">
         {featuredProjects.map((p) => (
           <Card
             key={p.name}
@@ -28,7 +28,7 @@ export default function Projects() {
             className="group flex flex-col p-6"
           >
             <div className="flex items-start justify-between gap-3">
-              <h3 className="font-display text-xl font-semibold text-ink dark:text-cloud">
+              <h3 className="font-display text-lg font-semibold leading-snug text-ink dark:text-cloud">
                 {p.name}
               </h3>
               <ArrowUpRight
@@ -55,15 +55,13 @@ export default function Projects() {
       </div>
 
       <div className="mt-10 flex justify-center">
-        <a
-          href={socialLinks.github}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/projects"
           className="inline-flex items-center gap-2 rounded-full border border-ink/15 dark:border-cloud/15 px-6 py-3 font-mono text-sm text-ink dark:text-cloud transition-colors hover:border-brand hover:text-brand"
         >
-          <Github size={16} />
+          <FolderGit2 size={16} />
           View All My Projects &amp; Open Source Work
-        </a>
+        </Link>
       </div>
     </section>
   );
