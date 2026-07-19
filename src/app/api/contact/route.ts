@@ -1,87 +1,24 @@
-import { NextResponse } from 'next/server';
-import * as nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
+import { sendContactMessageUseCase } from "@/infrastructure/container";
+import { ValidationError } from "@/application/errors/validation-error";
+import type { ContactMessage } from "@/domain/entities/contact-message";
 
-interface Payload {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_ADDRESS,
-    pass: process.env.EMAIL_PASSKEY,
-  },
-});
-
-// HTML email template
-const generateEmailTemplate = (name: string, email: string, userMessage: string): string => `
-  <div>
-    <p>${userMessage}<br/><br/>With regards,<br/>${name},<br/>${email}</p>
-  </div>
-`;
-
-// Helper function to send an email via Nodemailer
-async function sendEmail(payload: Payload, message: string): Promise<boolean> {
-  const { name, email, subject, message: userMessage } = payload;
-
-  const mailOptions = {
-    from: email,
-    to: process.env.EMAIL_ADDRESS,
-    subject: subject,
-    text: message,
-    html: generateEmailTemplate(name, email, userMessage),
-    replyTo: email,
-  };
-
+export async function POST(request: Request) {
   try {
-    await transporter.sendMail(mailOptions);
-    return true;
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error('Error while sending email:', error.message);
-    } else {
-      console.error('Unknown error while sending email:', error);
+    const body = (await request.json()) as ContactMessage;
+
+    await sendContactMessageUseCase.execute(body);
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return NextResponse.json({ error: error.message }, { status: 400 });
     }
-    return false;
+
+    console.error("Contact form error:", error);
+    return NextResponse.json(
+      { error: "Could not send your message. Please try again shortly." },
+      { status: 500 }
+    );
   }
 }
-
-export async function POST(request: Request): Promise<NextResponse> {
-  try {
-    const payload: Payload = await request.json();
-    const { name, email, subject, message: userMessage } = payload;
-
-    const message = `${subject}\n\n${userMessage}\n\n${name},\n${email}`;
-
-    // Send email
-    const emailSuccess = await sendEmail(payload, message);
-
-    if (emailSuccess) {
-      return NextResponse.json({
-        success: true,
-        message: 'Email sent successfully!',
-      }, { status: 200 });
-    }
-
-    return NextResponse.json({
-      success: false,
-      message: 'Failed to send email.',
-    }, { status: 500 });
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error("API Error:", error.message);
-    } else {
-      console.error("API Error:", error);
-    }
-    return NextResponse.json({
-      success: false,
-      message: 'Server error occurred.',
-    }, { status: 500 });
-  }
-};
