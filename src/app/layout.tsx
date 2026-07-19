@@ -1,41 +1,86 @@
-import { Inter } from "next/font/google";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Footer from "@/components/footer";
-import ScrollToTop from "@/components/helper/scroll-to-top";
-import Navbar from "@/components/navbar";
-
+import type { Metadata } from "next";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import "@/css/card.scss";
+import ThemeProvider from "@/presentation/components/theme/ThemeProvider";
+import { site } from "@/config/site";
 
-const inter = Inter({ subsets: ["latin"] });
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
 
-export const metadata = {
-  title: "Siro Jack | Software Engineer, Mentor",
+const body = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: `${site.name} — ${site.role}`,
   description:
-    "Software Engineer and Tech Writer. Best at Mobile app development with Flutter, Full Stack development with Mern. Other areas of expertise are Android, .Net and Qt.",
+    "Self-taught software engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET. Based in Nairobi, Kenya.",
+  keywords: [
+    "Siro Jackson",
+    "SiroDevs",
+    "Software Engineer Nairobi",
+    "Flutter Developer Kenya",
+    "Android Developer",
+    "iOS Developer",
+    "React Developer",
+    "Mobile App Developer Kenya",
+  ],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  openGraph: {
+    title: `${site.name} — ${site.role}`,
+    description:
+      "Self-taught software engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET.",
+    url: site.url,
+    siteName: site.name,
+    images: [{ url: "/images/profile.jpg", width: 1200, height: 1200 }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.role}`,
+    description:
+      "Self-taught software engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET.",
+    creator: "@SiroFitske",
+    images: ["/images/profile.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAF9F6" },
+    { media: "(prefers-color-scheme: dark)", color: "#0C0B09" },
+  ],
+};
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8105117485391855"
-     crossOrigin="anonymous"></script>
-        <meta name="google-site-verification" content="qlbPuZCF1n2VjGSBNw4SVHtIixwhAXYlmwMvy645GzA" />
-      </head>
-      <body className={inter.className}>
-        <ToastContainer />
-        <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
-          <Navbar />
-          {children}
-          <ScrollToTop />
-        </main>
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${display.variable} ${body.variable} ${mono.variable} bg-grain`}
+      >
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
