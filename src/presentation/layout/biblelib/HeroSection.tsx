@@ -27,7 +27,7 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col items-center justify-between py-2 lg:py-5">
       <Image
-        src="/swahilib/images/main_banner.png"
+        src="/biblelib/images/main_banner.png"
         width={500}
         height={280}
         alt={`${info.appName}'s AppIcon`}

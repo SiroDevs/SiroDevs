@@ -10,7 +10,7 @@ export default function Hero() {
           <p className="eyebrow mb-5">who am i</p>
           <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink dark:text-cloud sm:text-6xl">
             SIRO Jackson builds
-            <br />
+            <br className="hidden sm:block" />
             software that ships
             <RedDot />
           </h1>
@@ -44,7 +44,7 @@ export default function Hero() {
           <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs text-ink-faint dark:text-cloud-soft">
             <span>Nairobi, Kenya</span>
             <span className="text-paper-line dark:text-night-line">/</span>
-            <span>Flutter · Kotlin · Swift · Next.Js</span>
+            <span>Flutter · Kotlin · Swift · NextJs · Laravel</span>
           </div>
         </div>
 

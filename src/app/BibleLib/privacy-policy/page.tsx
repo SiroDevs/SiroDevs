@@ -9,11 +9,11 @@ export default function BibleLibPrivacyPolicy() {
   return (
     <div className="my-4 lg:my-8 mx-auto max-w-3xl">
       <Link
-        href="/biblelib"
+        href={`/${info.appName}`}
         className="inline-flex items-center gap-1.5 font-mono text-sm text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
       >
         <ArrowLeft size={15} />
-        Go back {info.appName}
+        Back to {info.appName}
       </Link>
 
       <div className="mt-6">
