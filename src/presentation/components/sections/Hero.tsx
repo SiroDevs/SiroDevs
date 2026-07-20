@@ -9,20 +9,20 @@ export default function Hero() {
         <div className="animate-rise">
           <p className="eyebrow mb-5">who am i</p>
           <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink dark:text-cloud sm:text-6xl">
-            SIRO Jackson builds
-            <br className="hidden sm:block" />
-            software that ships
+            SIRO Jack manifests ideas into apps
             <RedDot />
           </h1>
 
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-soft dark:text-cloud-soft">
+          <p className="mt-3 max-w-lg text-lg leading-relaxed text-ink-soft dark:text-cloud-soft">
             A software development engineer based in Nairobi with many years of
-            manifesting ideas into apps — Flutter, Android, iOS, and Frontend. I
-            took Britam&apos;s FA app from concept to the App Store and Play
-            Store.
+            turning concepts into market ready products — Flutter, Android,
+            iOS, and Frontend. <br />
+            For instance, I took Britam&apos;s Financial Advisors app from the
+            ground up to both the App Store and Play Store, reducing onboarding
+            clients to a fully paperless 3-minute experience.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <div className="mt-3 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 font-mono text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
@@ -61,7 +61,8 @@ export default function Hero() {
             />
           </div>
           <div className="absolute -bottom-5 -left-5 hidden rounded-xl border border-paper-line dark:border-night-line bg-paper-raised dark:bg-night-raised px-4 py-3 font-mono text-xs shadow-lg sm:block">
-            <span className="text-brand">🥳</span> 7+ years shipping
+            <span className="text-brand">🥳</span> 7+ Yrs Manifesting Ideas Into
+            Apps
           </div>
         </div>
       </div>

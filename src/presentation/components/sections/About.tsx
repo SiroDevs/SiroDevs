@@ -3,11 +3,11 @@ import { Eyebrow, RedDot } from "@/presentation/components/ui/Eyebrow";
 export default function About() {
   return (
     <section id="about" className="container-page py-5 sm:py-5">
-      <div className="space-y-10">
+      <div className="space-y-5">
         <div>
           <Eyebrow>about</Eyebrow>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
-            About Siro<RedDot />
+            About Siro Jackson<RedDot />
           </h2>
         </div>
 
