@@ -1,6 +1,6 @@
-import type { SongLibPrivacyText } from "@/domain/entities/songlib";
+import type { PrivacyText } from "@/domain/entities/app-entity";
 
-export const texts: SongLibPrivacyText[] = [
+export const texts: PrivacyText[] = [
   {
     id: 1,
     title: "Information Collection and Use",

@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="animate-rise">
           <p className="eyebrow mb-5">who am i</p>
           <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink dark:text-cloud sm:text-6xl">
-            Siro Jackson builds
+            SIRO Jackson builds
             <br />
             software that ships
             <RedDot />

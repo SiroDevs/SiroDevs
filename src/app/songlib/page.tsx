@@ -1,13 +1,13 @@
-import HeroSection from "@/presentation/components/songlib/HeroSection";
-import Features from "@/presentation/components/songlib/Features";
-import SongLibBottomLinks from "@/presentation/components/songlib/SongLibBottomLinks";
+import HeroSection from "@/presentation/layout/songlib/HeroSection";
+import Features from "@/presentation/layout/songlib/Features";
+import BottomLinks from "@/presentation/layout/songlib/BottomLinks";
 
 export default function SongLibHome() {
   return (
     <div suppressHydrationWarning>
       <HeroSection />
       <Features />
-      <SongLibBottomLinks />
+      <BottomLinks />
     </div>
   );
 }

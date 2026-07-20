@@ -1,6 +1,6 @@
-import type { SongLibFeature } from "@/domain/entities/songlib";
+import type { AppFeature } from "@/domain/entities/app-entity";
 
-export const features: SongLibFeature[] = [
+export const features: AppFeature[] = [
   {
     id: 1,
     title: "Completely Offline Access",

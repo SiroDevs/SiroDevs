@@ -1,6 +1,6 @@
-import type { SongLibAppInfo } from "@/domain/entities/songlib";
+import type { AppInfo } from "@/domain/entities/app-entity";
 
-export const info: SongLibAppInfo = {
+export const info: AppInfo = {
   appName: "SongLib",
   appIcon: "/songlib/icons/app_icon.png",
   callout: "Get SongLib",

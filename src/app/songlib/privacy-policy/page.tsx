@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 
 import { info } from "@/infrastructure/content/songlib/app-info";
 import { texts } from "@/infrastructure/content/songlib/privacy-texts";
-import type { SongLibPrivacyText } from "@/domain/entities/songlib";
+import { PrivacyText } from "@/domain/entities/app-entity";
 
 export default function SongLibPrivacyPolicy() {
   return (
@@ -13,7 +13,7 @@ export default function SongLibPrivacyPolicy() {
         className="inline-flex items-center gap-1.5 font-mono text-sm text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
       >
         <ArrowLeft size={15} />
-        Back to SongLib
+        Back to {info.appName}
       </Link>
 
       <div className="mt-6">
@@ -30,7 +30,7 @@ export default function SongLibPrivacyPolicy() {
           {info.privacyStatement}
         </p>
 
-        {texts.map((text: SongLibPrivacyText) => (
+        {texts.map((text: PrivacyText) => (
           <div key={text.id} className="mt-8">
             <h2 className="font-display text-xl font-semibold text-ink dark:text-cloud">
               {text.title}

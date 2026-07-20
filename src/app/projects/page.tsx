@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
-import Navbar from "@/presentation/components/layout/Navbar";
-import Footer from "@/presentation/components/layout/Footer";
+import Navbar from "@/presentation/components/navigation/Navbar";
+import Footer from "@/presentation/components/navigation/Footer";
 import ScrollToTop from "@/presentation/components/ui/ScrollToTop";
 import { Card } from "@/presentation/components/ui/Card";
 import { Tag } from "@/presentation/components/ui/Tag";
@@ -13,7 +13,7 @@ import { site, socialLinks } from "@/config/site";
 export const metadata: Metadata = {
   title: `Projects — ${site.name}`,
   description:
-    "A full list of the apps, platforms, and open-source work Siro Jackson has built — spanning Flutter, native Android and iOS, React, Next.js, and Laravel.",
+    "A full list of the apps, platforms, and open-source work Siro has built — spanning Flutter, native Android and iOS, React, Next.js, and Laravel.",
   alternates: { canonical: "/projects" },
 };
 

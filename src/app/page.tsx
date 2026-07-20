@@ -1,5 +1,5 @@
-import Navbar from "@/presentation/components/layout/Navbar";
-import Footer from "@/presentation/components/layout/Footer";
+import Navbar from "@/presentation/components/navigation/Navbar";
+import Footer from "@/presentation/components/navigation/Footer";
 import ScrollToTop from "@/presentation/components/ui/ScrollToTop";
 import Hero from "@/presentation/components/sections/Hero";
 import About from "@/presentation/components/sections/About";

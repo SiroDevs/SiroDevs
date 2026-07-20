@@ -1,10 +1,24 @@
 import type { Project } from "@/domain/entities/project";
 
-/**
- * The full project list. `featured: true` entries are surfaced on the
- * homepage grid; the /projects page renders all of them.
- */
 export const projects: Project[] = [
+  {
+    name: "BibleLib",
+    period: "Aug 2025 - Present",
+    description:
+      "An offline-first Bible app with dozens of translations you can read side by side, search instantly, and tune to how you read. It supports real use—bookmarks, notes, reading history, and even queue scriptures ahead of time for a sermon, study, or devotion, saved as a reusable list.",
+    tags: ["Kotlin", "Jetpack Compose", "Bible"],
+    href: "/BibleLib",
+    linkLabel: "View BibleLib",
+  },
+  {
+    name: "YouPlot",
+    period: "April 2026 - Present",
+    description:
+      "YouPlot is your ultimate outdoor activity companion, designed for runners, cyclists, hikers, and walkers who want more than just a tracker. Plan your adventure before you leave, then let YouPlot keep you on schedule while you're out there.",
+    tags: ["Kotlin", "Jetpack Compose", "Maps", "Open Street Maps", "GPX", "FIT"],
+    href: "/YouPlot",
+    linkLabel: "View YouPlot",
+  },
   {
     name: "Salama Kit",
     period: "Jun 2026",
@@ -49,7 +63,7 @@ export const projects: Project[] = [
     description:
       "An offline-first church hymn app, 8 years in the making: Java → Flutter (2020) → native Kotlin/Compose and Swift/SwiftUI (2024), on a custom MERN backend.",
     tags: ["Kotlin", "Jetpack Compose", "SwiftUI", "MongoDB"],
-    href: "/songlib",
+    href: "/SongLib",
     linkLabel: "View SongLib",
     featured: true,
   },
@@ -59,8 +73,8 @@ export const projects: Project[] = [
     description:
       "An offline-first Swahili dictionary app, migrated from Flutter to native Kotlin/Jetpack Compose and Swift/SwiftUI on a Supabase backend.",
     tags: ["Kotlin", "Jetpack Compose", "SwiftUI", "Supabase"],
-    href: "https://github.com/SiroDevs",
-    linkLabel: "GitHub",
+    href: "/SwahiLib",
+    linkLabel: "View SwahiLib",
     featured: true,
   },
   {
