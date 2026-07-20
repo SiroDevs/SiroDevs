@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="container-page flex flex-col items-center gap-6 py-10 sm:flex-row sm:justify-between">
         <div>
           <p className="font-display text-lg font-semibold text-ink dark:text-cloud">
-            SIRO<span className="text-brand">.</span>
+            SIRO <span className="text-brand">DEVS</span>
           </p>
           <p className="mt-1 font-mono text-xs text-ink-faint dark:text-cloud-soft">
             © {year} {site.name}. {site.location}.

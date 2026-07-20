@@ -30,6 +30,8 @@ const config: Config = {
           DEFAULT: "#F3EFE7",
           soft: "#B6AFA2",
         },
+        // Used only within the /songlib section, to match its original branding.
+        primary: "#331900",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],

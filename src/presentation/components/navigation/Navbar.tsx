@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "@/presentation/components/theme/ThemeToggle";
+import ThemeToggle from "@/presentation/theme/ThemeToggle";
 
 const links = [
   { href: "/#about", label: "About Me" },
   { href: "/projects", label: "My Projects" },
+  { href: "/SongLib", label: "SongLib" },
+  { href: "/SwahiLib", label: "SwahiLib" },
 ];
 
 export default function Navbar() {
@@ -33,8 +35,7 @@ export default function Navbar() {
           href="/#top"
           className="font-display text-lg font-semibold tracking-tight text-ink dark:text-cloud"
         >
-          SIRO
-          <span className="text-brand">.</span>
+          SIRO <span className="text-brand">DEVS</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
