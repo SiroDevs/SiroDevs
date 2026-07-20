@@ -9,17 +9,16 @@ export default function Hero() {
         <div className="animate-rise">
           <p className="eyebrow mb-5">who am i</p>
           <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink dark:text-cloud sm:text-6xl">
-            SIRO Jack manifests ideas into apps
+            SIRO Jackson, Manifesting ideas into applications
             <RedDot />
           </h1>
 
           <p className="mt-3 max-w-lg text-lg leading-relaxed text-ink-soft dark:text-cloud-soft">
-            A software development engineer based in Nairobi with many years of
+            A software engineer based in Nairobi with many years of
             turning concepts into market ready products — Flutter, Android,
-            iOS, and Frontend. <br />
-            For instance, I took Britam&apos;s Financial Advisors app from the
-            ground up to both the App Store and Play Store, reducing onboarding
-            clients to a fully paperless 3-minute experience.
+            iOS, and Frontend. I took Britam&apos;s Financial Advisors app from the
+            ground up to the App Store and Play Store, reducing onboarding
+            clients to a paperless 3-minute experience.
           </p>
 
           <div className="mt-3 flex flex-wrap items-center gap-4">

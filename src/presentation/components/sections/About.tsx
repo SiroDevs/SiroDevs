@@ -7,7 +7,7 @@ export default function About() {
         <div>
           <Eyebrow>about</Eyebrow>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
-            About Siro Jackson<RedDot />
+            About Siro<RedDot />
           </h2>
         </div>
 
