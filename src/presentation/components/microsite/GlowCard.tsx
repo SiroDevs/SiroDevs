@@ -5,9 +5,15 @@ import { ReactNode, useEffect } from "react";
 interface GlowCardProps {
   children: ReactNode;
   identifier: string;
+  /** tailwind bg/text color classes, e.g. "bg-[#3A1300] text-[#EEDAC4]" */
+  className?: string;
 }
 
-export default function GlowCard({ children, identifier }: GlowCardProps) {
+export default function GlowCard({
+  children,
+  identifier,
+  className = "",
+}: GlowCardProps) {
   useEffect(() => {
     const CONTAINER = document.querySelector(
       `.glow-container-${identifier}`
@@ -46,7 +52,8 @@ export default function GlowCard({ children, identifier }: GlowCardProps) {
         ];
 
         let ANGLE =
-          (Math.atan2(event.y - CARD_CENTER[1], event.x - CARD_CENTER[0]) * 180) /
+          (Math.atan2(event.y - CARD_CENTER[1], event.x - CARD_CENTER[0]) *
+            180) /
           Math.PI;
 
         ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
@@ -76,9 +83,11 @@ export default function GlowCard({ children, identifier }: GlowCardProps) {
   }, [identifier]);
 
   return (
-    <div className={`glow-container-${identifier} glow-container drop-shadow-3xl`}>
+    <div
+      className={`glow-container-${identifier} glow-container drop-shadow-3xl`}
+    >
       <article
-        className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#ccc] transition-all duration-300 relative bg-[#000F40] text-[#EEDAC4] rounded-xl hover:border-transparent w-full`}
+        className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#ccc] transition-all duration-300 relative rounded-xl hover:border-transparent w-full ${className}`}
       >
         <div className="glows"></div>
         {children}
