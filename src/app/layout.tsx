@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/presentation/theme/ThemeProvider";
 import { site } from "@/config/site";
-
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const body = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-body",
-  display: "swap",
-});
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -77,9 +63,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${display.variable} ${body.variable} ${mono.variable} bg-grain`}
-      >
+      <body className={`${mono.variable} bg-grain`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

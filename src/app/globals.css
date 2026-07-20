@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-display: "Trebuchet MS", "Lucida Grande", Verdana, sans-serif;
+  --font-body: "Trebuchet MS", "Lucida Grande", Verdana, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
