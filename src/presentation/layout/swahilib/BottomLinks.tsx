@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Star, GitFork } from "lucide-react";
 
 import { AppUrls } from "@/infrastructure/content/swahilib/app-urls";
+import { info } from "@/infrastructure/content/swahilib/app-info";
 
 export default function BottomLinks() {
   const forkUrl = `${AppUrls.github}/fork`;
@@ -27,7 +28,7 @@ export default function BottomLinks() {
         Fork
       </a>
       <Link
-        href="/SwahiLib/sera-ya-faragha"
+        href={`/${info.appName}/sera-ya-faragha`}
         className="text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
       >
         Sera ya Faragha

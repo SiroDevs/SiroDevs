@@ -5,8 +5,8 @@ import Image from "next/image";
 import { MdDownload } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { AppUrls } from "@/infrastructure/content/swahilib/app-urls";
-import { info } from "@/infrastructure/content/swahilib/app-info";
+import { AppUrls } from "@/infrastructure/content/youplot/app-urls";
+import { info } from "@/infrastructure/content/youplot/app-info";
 
 const texts = ["Just plot it", "Just plan it"];
 
@@ -23,7 +23,7 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col items-center justify-between py-2 lg:py-5">
       <Image
-        src="/swahilib/images/main_banner.png"
+        src="/youplot/images/main_banner.png"
         width={500}
         height={280}
         alt={`${info.appName}'s AppIcon`}

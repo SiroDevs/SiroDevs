@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Star, GitFork } from "lucide-react";
 
 import { AppUrls } from "@/infrastructure/content/swahilib/app-urls";
+import { info } from "@/infrastructure/content/youplot/app-info";
 
 export default function BottomLinks() {
   const forkUrl = `${AppUrls.github}/fork`;
@@ -27,7 +28,7 @@ export default function BottomLinks() {
         Fork
       </a>
       <Link
-        href="/YouPlot/privacy-policy"
+        href={`/${info.appName}/privacy-policy`}
         className="text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
       >
         Privacy Policy
