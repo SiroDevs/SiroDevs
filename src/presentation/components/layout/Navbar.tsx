@@ -7,6 +7,7 @@ import ThemeToggle from "@/presentation/components/theme/ThemeToggle";
 const links = [
   { href: "/#about", label: "About Me" },
   { href: "/projects", label: "My Projects" },
+  { href: "/songlib", label: "SongLib" },
 ];
 
 export default function Navbar() {

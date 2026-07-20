@@ -1,0 +1,85 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Marquee from "react-fast-marquee";
+import { RiApps2AiFill } from "react-icons/ri";
+
+import { features } from "@/infrastructure/content/songlib/features";
+import type { SongLibBook, SongLibFeature } from "@/domain/entities/songlib";
+import { fetchBooks } from "@/infrastructure/songlib/songlib-api";
+import GlowCard from "@/presentation/components/songlib/GlowCard";
+import BookCard from "@/presentation/components/songlib/BookCard";
+
+export default function Features() {
+  const [books, setBooks] = useState<SongLibBook[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadBooks = async () => {
+      try {
+        const data = await fetchBooks();
+        if (data) {
+          setBooks(data);
+        } else {
+          setError("Failed to load books.");
+        }
+      } catch (err) {
+        console.error("Error fetching books:", err);
+        setError("An error occurred while fetching books.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBooks();
+  }, []);
+
+  return (
+    <section id="features">
+      <div className="w-full">
+        <Marquee
+          gradient={false}
+          speed={80}
+          pauseOnHover={true}
+          pauseOnClick={true}
+          delay={0}
+          play={true}
+          direction="left"
+        >
+          {loading ? (
+            <span></span>
+          ) : error ? (
+            <p>{error}</p>
+          ) : books.length > 0 ? (
+            books.map((book) => <BookCard book={book} key={book.bookId} />)
+          ) : (
+            <p>Loading data ...</p>
+          )}
+        </Marquee>
+      </div>
+
+      <div className="py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          {features.map((feature: SongLibFeature) => (
+            <GlowCard key={feature.id} identifier={`feature-${feature.id}`}>
+              <div className="p-3 relative">
+                <div className="flex items-center gap-x-8 px-3 py-5">
+                  <div className="text-red-500 transition-all duration-300 hover:scale-125">
+                    <RiApps2AiFill size={36} color="#BF360C" />
+                  </div>
+                  <div>
+                    <p className="text-base sm:text-xl mb-2 font-medium uppercase">
+                      {feature.title}
+                    </p>
+                    <p className="text-sm sm:text-base">{feature.description}</p>
+                  </div>
+                </div>
+              </div>
+            </GlowCard>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

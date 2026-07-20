@@ -1,5 +1,6 @@
 import Navbar from "@/presentation/components/layout/Navbar";
 import Footer from "@/presentation/components/layout/Footer";
+import ScrollToTop from "@/presentation/components/ui/ScrollToTop";
 import Hero from "@/presentation/components/sections/Hero";
 import About from "@/presentation/components/sections/About";
 import WorkExperience from "@/presentation/components/sections/WorkExperience";
@@ -46,6 +47,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

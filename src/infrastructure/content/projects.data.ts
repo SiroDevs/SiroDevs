@@ -49,8 +49,8 @@ export const projects: Project[] = [
     description:
       "An offline-first church hymn app, 8 years in the making: Java → Flutter (2020) → native Kotlin/Compose and Swift/SwiftUI (2024), on a custom MERN backend.",
     tags: ["Kotlin", "Jetpack Compose", "SwiftUI", "MongoDB"],
-    href: "https://github.com/SiroDevs",
-    linkLabel: "GitHub",
+    href: "/songlib",
+    linkLabel: "View SongLib",
     featured: true,
   },
   {
