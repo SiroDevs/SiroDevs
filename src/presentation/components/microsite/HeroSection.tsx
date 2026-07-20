@@ -5,25 +5,44 @@ import Image from "next/image";
 import { MdDownload } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { AppUrls } from "@/infrastructure/content/youplot/app-urls";
-import { info } from "@/infrastructure/content/youplot/app-info";
+import type { AppInfo } from "@/domain/entities/app-entity";
 
-const texts = ["Just plot it", "Just plan it"];
+interface HeroSectionProps {
+  info: AppInfo;
+  androidUrl: string;
+  texts: string[];
+  heroImage: string;
+  subheading: string;
+  ctaGradient: string;
+  ctaLabel?: string;
+  availabilityText: string;
+  rotateIntervalMs?: number;
+}
 
-export default function HeroSection() {
+export default function HeroSection({
+  info,
+  androidUrl,
+  texts,
+  heroImage,
+  subheading,
+  ctaGradient,
+  ctaLabel,
+  availabilityText,
+  rotateIntervalMs = 5000,
+}: HeroSectionProps) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 5000);
+    }, rotateIntervalMs);
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length, rotateIntervalMs]);
 
   return (
     <section className="flex flex-col items-center justify-between py-2 lg:py-5">
       <Image
-        src="/youplot/images/main_banner.png"
+        src={heroImage}
         width={500}
         height={280}
         alt={`${info.appName}'s AppIcon`}
@@ -31,7 +50,7 @@ export default function HeroSection() {
         priority
       />
       <h2 className="text-center font-bold text-2xl leading-10 text-ink dark:text-cloud">
-        On your phone ...
+        {subheading}
       </h2>
 
       <h1 className="text-ink dark:text-cloud font-bold rounded-md text-3xl sm:text-2xl md:text-xl lg:text-[2.2rem] leading-tight lg:leading-[2.8rem] mb-3">
@@ -52,17 +71,17 @@ export default function HeroSection() {
       </h1>
 
       <a
-        className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-orange-600 to-red-900 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-        href={AppUrls.android}
+        className={`flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r ${ctaGradient} px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold`}
+        href={androidUrl}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span className="text-xl">Get YouPlot Today</span>
+        <span className="text-xl">{ctaLabel ?? `Get ${info.appName} Today`}</span>
         <MdDownload size={16} />
       </a>
 
       <p className="text-ink-soft dark:text-cloud-soft text-sm mt-2">
-        Available on Android only
+        {availabilityText}
       </p>
     </section>
   );
