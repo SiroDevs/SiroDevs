@@ -6,7 +6,7 @@ import { info } from "@/infrastructure/content/biblelib/app-info";
 export const metadata: Metadata = {
   title: `${info.callout} — ${info.tagline}`,
   description: info.description,
-  alternates: { canonical: "/biblelib" },
+  alternates: { canonical: "/BibleLib" },
 };
 
 export default function BibleLibLayout({
