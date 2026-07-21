@@ -6,7 +6,7 @@ import { info } from "@/infrastructure/content/swahilib/app-info";
 export const metadata: Metadata = {
   title: `${info.callout} — ${info.tagline}`,
   description: info.description,
-  alternates: { canonical: "/swahilib" },
+  alternates: { canonical: "/SwahiLib" },
 };
 
 export default function SwahiLibLayout({

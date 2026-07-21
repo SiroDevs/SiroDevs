@@ -6,7 +6,7 @@ import { info } from "@/infrastructure/content/songlib/app-info";
 export const metadata: Metadata = {
   title: `${info.callout} — ${info.tagline}`,
   description: info.description,
-  alternates: { canonical: "/songlib" },
+  alternates: { canonical: "/SongLib" },
 };
 
 export default function SongLibLayout({

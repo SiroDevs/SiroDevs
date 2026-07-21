@@ -6,7 +6,7 @@ import { info } from "@/infrastructure/content/youplot/app-info";
 export const metadata: Metadata = {
   title: `${info.callout} — ${info.tagline}`,
   description: info.description,
-  alternates: { canonical: "/youplot" },
+  alternates: { canonical: "/YouPlot" },
 };
 
 export default function YouPlotLayout({
