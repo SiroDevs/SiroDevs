@@ -84,7 +84,7 @@ export default function Contact() {
                 name="name"
                 type="text"
                 required
-                placeholder="Jane Mwangi"
+                placeholder="Omonto Oyonde"
                 className={inputClasses}
               />
             </div>
@@ -100,7 +100,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 required
-                placeholder="jane@company.com"
+                placeholder="oyonde@obande.com"
                 className={inputClasses}
               />
             </div>

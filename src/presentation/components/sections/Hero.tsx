@@ -9,17 +9,18 @@ export default function Hero() {
         <div className="animate-rise">
           <p className="eyebrow mb-5">who am i</p>
           <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink dark:text-cloud sm:text-6xl">
-            SIRO Jackson builds
+            <span className="text-brand">SIRO</span> Jackson,{" "}
             <br className="hidden sm:block" />
-            software that ships
-            <RedDot />
+            <span className="text-brand">Manifesting</span> ideas into{" "}
+            <span className="text-brand">Applications</span>.
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-soft dark:text-cloud-soft">
             A software development engineer based in Nairobi with many years of
             manifesting ideas into apps — Flutter, Android, iOS, and Frontend. I
-            took Britam&apos;s FA app from concept to the App Store and Play
-            Store.
+            took Britam&apos;s Financial Advisors app from the ground up to the
+            App Store and Play Store, reducing onboarding clients to a paperless
+            three-minute experience
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -27,7 +28,7 @@ export default function Hero() {
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 font-mono text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
             >
-              Start a conversation with me
+              Start a Conversation With Me
               <ArrowUpRight
                 size={16}
                 className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -37,7 +38,7 @@ export default function Hero() {
               href="#projects"
               className="font-mono text-sm text-ink-soft dark:text-cloud-soft underline decoration-ink-faint/40 dark:decoration-cloud-soft/40 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
             >
-              See my work
+              See My Work
             </a>
           </div>
 
