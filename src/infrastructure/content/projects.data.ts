@@ -5,7 +5,7 @@ export const projects: Project[] = [
     name: "BibleLib",
     period: "Aug 2025 - Present",
     description:
-      "An offline-first Bible app with dozens of translations you can read side by side, search instantly, and tune to how you read. It supports real use—bookmarks, notes, reading history, and even queue scriptures ahead of time for a sermon, study, or devotion, saved as a reusable list.",
+      "A clean, offline-first Bible reader built for focused study. Explore a number of translations side by side, search instantly, personalize your reading experience, and keep everything organized with bookmarks, notes, reading history, and reusable scripture lists for sermons, studies, or personal devotions.",
     tags: ["Kotlin", "Jetpack Compose", "Bible"],
     href: "/BibleLib",
     linkLabel: "View BibleLib",
