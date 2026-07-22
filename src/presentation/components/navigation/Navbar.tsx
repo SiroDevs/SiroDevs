@@ -9,6 +9,7 @@ const links = [
   { href: "/projects", label: "My Projects" },
   { href: "/SongLib", label: "SongLib" },
   { href: "/SwahiLib", label: "SwahiLib" },
+  { href: "https://siro.hashnode.dev", label: "Tech Blog" },
 ];
 
 export default function Navbar() {
