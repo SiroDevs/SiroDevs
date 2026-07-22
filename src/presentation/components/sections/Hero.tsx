@@ -10,12 +10,12 @@ export default function Hero() {
           <p className="eyebrow mb-5">who am i</p>
           <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink dark:text-cloud sm:text-6xl">
             <span className="text-brand">SIRO</span> Jackson,{" "}
+            <span className="text-brand">Manifesting</span> ideas{" "}
             <br className="hidden sm:block" />
-            <span className="text-brand">Manifesting</span> ideas into{" "}
-            <span className="text-brand">Applications</span>.
+            into <span className="text-brand">Applications</span>.
           </h1>
 
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-soft dark:text-cloud-soft">
+          <p className="mt-2 max-w-lg text-lg leading-relaxed text-ink-soft dark:text-cloud-soft">
             A software development engineer based in Nairobi with many years of
             manifesting ideas into apps — Flutter, Android, iOS, and Frontend. I
             took Britam&apos;s Financial Advisors app from the ground up to the
@@ -23,7 +23,7 @@ export default function Hero() {
             three-minute experience
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <div className="mt-5 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 font-mono text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
