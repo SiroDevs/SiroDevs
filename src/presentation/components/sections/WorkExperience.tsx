@@ -12,7 +12,7 @@ export default function WorkExperience() {
   return (
     <section id="work" className="container-page py-5 sm:py-5">
       <Eyebrow>work</Eyebrow>
-      <h2 className="mb-8 font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
+      <h2 className="mb-4 font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
         Siro At Work<RedDot />
       </h2>
 

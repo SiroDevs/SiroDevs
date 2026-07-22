@@ -49,7 +49,7 @@ export default function Contact() {
     "w-full rounded-xl border border-paper-line dark:border-night-line bg-paper dark:bg-night px-4 py-3 text-sm text-ink dark:text-cloud placeholder:text-ink-faint dark:placeholder:text-cloud-soft outline-none transition-colors focus:border-brand";
 
   return (
-    <section id="contact" className="container-page py-5 sm:py-10">
+    <section id="contact" className="container-page py-5 sm:py-5">
       <Eyebrow>contact</Eyebrow>
       <h2 className="mb-10 font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
         Let&apos;s Talk

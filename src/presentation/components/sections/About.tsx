@@ -3,7 +3,7 @@ import { Eyebrow, RedDot } from "@/presentation/components/ui/Eyebrow";
 export default function About() {
   return (
     <section id="about" className="container-page py-5 sm:py-5">
-      <div className="space-y-10">
+      <div className="space-y-5">
         <div>
           <Eyebrow>about</Eyebrow>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
@@ -11,7 +11,7 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="space-y-5 text-[1.05rem] leading-relaxed text-ink-soft dark:text-cloud-soft">
+        <div className="space-y-3 text-[1.05rem] leading-relaxed text-ink-soft dark:text-cloud-soft">
           <p>
             I&apos;m a software development engineer with over 7 years of
             experience shipping production software across native Android
