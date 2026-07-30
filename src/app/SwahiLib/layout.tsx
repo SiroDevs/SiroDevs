@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "SwahiLib",
     "Kamusi ya Kiswahili",
     "Swahili dictionary app",
+    "Kiswahili Kitukuzwe",
     "offline Swahili dictionary",
     "Swahili idioms nahau",
     "Swahili proverbs methali",

@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   keywords: [
     "SongLib",
     "vSongBook",
-    "church songbook app",
-    "offline hymns app",
-    "Christian hymn book app",
-    "choir songs Kenya",
-    "worship songbook offline",
+    "Songs of Worship",
+    "Nyimbo za Injili",
+    "Believers Songbook",
+    "Virtual songbook",
+    "Jack Siro",
   ],
   alternates: { canonical: "/SongLib" },
   openGraph: {
