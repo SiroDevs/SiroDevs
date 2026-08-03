@@ -28,8 +28,7 @@ export default function YouPlotHome() {
       <BottomLinks
         githubUrl={AppUrls.github}
         showFork={theme.showFork}
-        privacyHref={`/${info.appName}/${theme.privacyPath}`}
-        privacyLabel={theme.privacyLabel}
+        privacyHref={`/${info.appName}/privacy-policy`}
       />
     </div>
   );
