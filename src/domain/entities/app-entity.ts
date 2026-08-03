@@ -4,7 +4,6 @@ export interface AppInfo {
   tagline: string;
   callout: string;
   description: string;
-  privacyStatement: string;
 }
 
 export interface SongLibBook {
