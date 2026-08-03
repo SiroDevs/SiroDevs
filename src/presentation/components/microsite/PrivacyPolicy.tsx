@@ -7,18 +7,12 @@ interface PrivacyPolicyProps {
   info: AppInfo;
   texts: PrivacyText[];
   backHref: string;
-  backLabel: string;
-  title: string;
-  subtitlePrefix: string;
 }
 
 export default function PrivacyPolicy({
   info,
   texts,
   backHref,
-  backLabel,
-  title,
-  subtitlePrefix,
 }: PrivacyPolicyProps) {
   return (
     <div className="my-4 lg:my-8 mx-auto max-w-3xl">
@@ -27,15 +21,15 @@ export default function PrivacyPolicy({
         className="inline-flex items-center gap-1.5 font-mono text-sm text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
       >
         <ArrowLeft size={15} />
-        {backLabel} {info.appName}
+        Back to {info.appName}
       </Link>
 
       <div className="mt-6">
         <h1 className="font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
-          {title}
+          Privacy Policy
         </h1>
         <p className="mt-2 font-mono text-sm text-ink-faint dark:text-cloud-soft">
-          {subtitlePrefix} {info.appName}
+          Privacy Policy for {info.appName}
         </p>
       </div>
 

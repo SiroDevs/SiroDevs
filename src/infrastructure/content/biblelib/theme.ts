@@ -13,8 +13,4 @@ export const theme: MicrositeTheme = {
   glowClassName: "bg-[#3A1300] text-[#EEDAC4]",
   iconColor: "#FFF",
   showFork: true,
-  privacyPath: "privacy-policy",
-  privacyLabel: "Privacy Policy",
-  privacyBackLabel: "Back to",
-  privacySubtitlePrefix: "Privacy Policy for",
 };

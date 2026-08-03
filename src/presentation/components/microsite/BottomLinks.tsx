@@ -5,14 +5,12 @@ interface BottomLinksProps {
   githubUrl: string;
   showFork?: boolean;
   privacyHref: string;
-  privacyLabel: string;
 }
 
 export default function BottomLinks({
   githubUrl,
   showFork = true,
   privacyHref,
-  privacyLabel,
 }: BottomLinksProps) {
   const forkUrl = `${githubUrl}/fork`;
 
@@ -42,7 +40,7 @@ export default function BottomLinks({
         href={privacyHref}
         className="text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
       >
-        {privacyLabel}
+        Privacy Policy
       </Link>
     </div>
   );

@@ -8,9 +8,5 @@ export const theme: MicrositeTheme = {
   availabilityText: "Available on Android only",
   glowClassName: "bg-[#432B25] text-[#EEDAC4]",
   iconColor: "#FFF",
-  showFork: true,
-  privacyPath: "privacy-policy",
-  privacyLabel: "Privacy Policy",
-  privacyBackLabel: "Back to",
-  privacySubtitlePrefix: "Privacy Policy for",
+  showFork: true
 };
