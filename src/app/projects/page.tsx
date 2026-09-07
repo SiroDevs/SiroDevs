@@ -8,7 +8,7 @@ import { Card } from "@/presentation/components/ui/Card";
 import { Tag } from "@/presentation/components/ui/Tag";
 import { Eyebrow, RedDot } from "@/presentation/components/ui/Eyebrow";
 import { projects } from "@/infrastructure/content/projects.data";
-import { site, socialLinks } from "@/config/site";
+import { site, mylinks } from "@/config/site";
 
 export const metadata: Metadata = {
   title: `Projects — ${site.name}`,
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
               </p>
             </div>
             <a
-              href={socialLinks.github}
+              href={mylinks.github}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-full border border-ink/15 dark:border-cloud/15 px-5 py-2.5 font-mono text-sm text-ink dark:text-cloud transition-colors hover:border-brand hover:text-brand"
