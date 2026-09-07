@@ -10,7 +10,6 @@ const links = [
   { href: "/projects", label: "My Projects" },
   { href: "/SongLib", label: "SongLib" },
   { href: "/SwahiLib", label: "SwahiLib" },
-  { href: "/BibleLib", label: "BibleLib" },
   { href: mylinks.techblog, label: "Tech Blog" },
   { href: mylinks.socialblog, label: "Social Blog" },
 ];
