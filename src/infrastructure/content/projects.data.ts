@@ -11,6 +11,15 @@ export const projects: Project[] = [
     linkLabel: "View BibleLib",
   },
   {
+    name: "Mwalimu AI",
+    period: "April 2026 - Present",
+    description:
+      "A teacher's content generation engine for teaching and examination materials using the KICD approved syallubus, WIP",
+    tags: ["Next.js", "TypeScript", "Supabase", "Claude", "AI", "Teaching"],
+    href: "#",
+    linkLabel: "mwalimu-ai.co.ke",
+  },
+  {
     name: "YouPlot",
     period: "April 2026 - Present",
     description:
