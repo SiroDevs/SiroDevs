@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/presentation/theme/ThemeToggle";
+import { mylinks } from "@/config/site";
 
 const links = [
   { href: "/#about", label: "About Me" },
   { href: "/projects", label: "My Projects" },
   { href: "/SongLib", label: "SongLib" },
   { href: "/SwahiLib", label: "SwahiLib" },
-  { href: "https://siro.hashnode.dev", label: "Tech Blog" },
+  { href: "/BibleLib", label: "BibleLib" },
+  { href: mylinks.techblog, label: "Tech Blog" },
+  { href: mylinks.socialblog, label: "Social Blog" },
 ];
 
 export default function Navbar() {

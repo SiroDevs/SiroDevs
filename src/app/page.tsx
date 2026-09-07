@@ -7,7 +7,7 @@ import WorkExperience from "@/presentation/components/sections/WorkExperience";
 import Projects from "@/presentation/components/sections/Projects";
 import Blog from "@/presentation/components/sections/Blog";
 import Contact from "@/presentation/components/sections/Contact";
-import { site, socialLinks } from "@/config/site";
+import { site, mylinks } from "@/config/site";
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -23,10 +23,11 @@ const personJsonLd = {
     addressCountry: "KE",
   },
   sameAs: [
-    socialLinks.github,
-    socialLinks.linkedin,
-    socialLinks.x,
-    socialLinks.blog,
+    mylinks.github,
+    mylinks.linkedin,
+    mylinks.x,
+    mylinks.techblog,
+    mylinks.socialblog,
   ],
 };
 

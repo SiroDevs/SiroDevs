@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Card } from "@/presentation/components/ui/Card";
 import { Eyebrow, RedDot } from "@/presentation/components/ui/Eyebrow";
 import { getLatestPostsUseCase } from "@/infrastructure/container";
-import { socialLinks } from "@/config/site";
+import { mylinks } from "@/config/site";
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -25,7 +25,7 @@ export default async function Blog() {
           </h2>
         </div>
         <a
-          href={socialLinks.blog}
+          href={mylinks.techblog}
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-sm text-ink-soft dark:text-cloud-soft underline decoration-ink-faint/40 dark:decoration-cloud-soft/40 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
@@ -39,7 +39,7 @@ export default async function Blog() {
           <p className="text-sm text-ink-soft dark:text-cloud-soft">
             New posts are on the way. In the meantime,{" "}
             <a
-              href={socialLinks.blog}
+              href={mylinks.techblog}
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand underline underline-offset-4"
