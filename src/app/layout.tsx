@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: `${site.name} — ${site.role}`,
   description:
-    "Self-taught software engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET. Based in Nairobi, Kenya.",
+    "SSoftware developer engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET. Based in Nairobi, Kenya.",
   keywords: [
     "Siro Jackson",
     "SiroDevs",
-    "Software Engineer Nairobi",
+    "Software Developer Engineer Nairobi",
     "Flutter Developer Kenya",
     "Android Developer",
     "iOS Developer",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} — ${site.role}`,
     description:
-      "Self-taught software engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET.",
+      "Software developer engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET.",
     url: site.url,
     siteName: site.name,
     images: [{ url: "/images/profile.jpg", width: 1200, height: 1200 }],
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — ${site.role}`,
     description:
-      "Self-taught software engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET.",
-    creator: "@SiroFitske",
+      "Software developer  engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET.",
+    creator: "@SiroFromke",
     images: ["/images/profile.jpg"],
   },
   robots: { index: true, follow: true },
