@@ -1,12 +1,13 @@
-import { Github, Linkedin, Twitter, BookOpen, Smartphone } from "lucide-react";
-import { site, socialLinks } from "@/config/site";
+import { Github, Linkedin, X, BookOpen, Smartphone } from "lucide-react";
+import { site, mylinks } from "@/config/site";
 
 const links = [
-  { label: "X (Twitter)", href: socialLinks.x, icon: Twitter },
-  { label: "LinkedIn", href: socialLinks.linkedin, icon: Linkedin },
-  { label: "GitHub", href: socialLinks.github, icon: Github },
-  { label: "Blog", href: socialLinks.blog, icon: BookOpen },
-  { label: "Play Store", href: socialLinks.playStore, icon: Smartphone },
+  { label: "X", href: mylinks.x, icon: X },
+  { label: "LinkedIn", href: mylinks.linkedin, icon: Linkedin },
+  { label: "GitHub", href: mylinks.github, icon: Github },
+  { label: "Tech Blog", href: mylinks.techblog, icon: BookOpen },
+  { label: "Social Blog", href: mylinks.socialblog, icon: BookOpen },
+  { label: "Play Store", href: mylinks.playStore, icon: Smartphone },
 ];
 
 export default function Footer() {
