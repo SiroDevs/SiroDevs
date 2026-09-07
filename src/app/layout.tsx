@@ -13,12 +13,15 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.name} — ${site.role}`,
+  title: `${site.name} [${site.brand}] — ${site.role}`,
   description:
-    "SSoftware developer engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET. Based in Nairobi, Kenya.",
+    "Software developer engineer with 7+ years shipping production apps across Android, iOS, Flutter, React and .NET. Based in Nairobi, Kenya.",
   keywords: [
     "Siro Jackson",
     "SiroDevs",
+    "Jack Siro",
+    "Siro Jack",
+    "Jackson Siro",
     "Software Developer Engineer Nairobi",
     "Flutter Developer Kenya",
     "Android Developer",
