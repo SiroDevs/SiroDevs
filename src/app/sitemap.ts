@@ -1,9 +1,5 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/config/site";
-import { theme as songlibTheme } from "@/infrastructure/content/songlib/theme";
-import { theme as swahilibTheme } from "@/infrastructure/content/swahilib/theme";
-import { theme as youplotTheme } from "@/infrastructure/content/youplot/theme";
-import { theme as biblelibTheme } from "@/infrastructure/content/biblelib/theme";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -22,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${site.url}/SongLib/${songlibTheme.privacyPath}`,
+      url: `${site.url}/SongLib/privacy-policy`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
@@ -34,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${site.url}/SwahiLib/${swahilibTheme.privacyPath}`,
+      url: `${site.url}/SwahiLib`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
@@ -46,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${site.url}/YouPlot/${youplotTheme.privacyPath}`,
+      url: `${site.url}/YouPlot`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
@@ -58,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${site.url}/BibleLib/${biblelibTheme.privacyPath}`,
+      url: `${site.url}/BibleLib`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,

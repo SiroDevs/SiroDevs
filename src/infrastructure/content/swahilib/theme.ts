@@ -15,8 +15,4 @@ export const theme: MicrositeTheme = {
   glowClassName: "bg-[#000F40] text-[#EEDAC4]",
   iconColor: "#FFF",
   showFork: true,
-  privacyPath: "sera-ya-faragha",
-  privacyLabel: "Sera ya Faragha",
-  privacyBackLabel: "Rudi kwa",
-  privacySubtitlePrefix: "Sera ya Faragha ya",
 };

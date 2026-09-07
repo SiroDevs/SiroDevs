@@ -30,10 +30,10 @@ export interface MicrositeTheme {
   heroTexts: string[];
   heroImage: string;
   heroSubheading: string;
-  ctaGradient: string; // tailwind gradient stops, e.g. "from-red-600 to-red-900"
-  ctaLabel?: string; // defaults to `Get ${appName} Today`
+  ctaGradient: string;
+  ctaLabel?: string;
   availabilityText: string;
-  glowClassName: string; // tailwind bg/text classes for the feature GlowCards
+  glowClassName: string;
   iconColor: string;
   showFork: boolean;
 }
