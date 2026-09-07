@@ -1,6 +1,6 @@
 export const site = {
-  name: "Siro Jackson",
-  role: "Software Engineer",
+  name: "Siro Jackson [SiroDevs]",
+  role: "Software Developer Engineer",
   url: "https://sirodevs.vercel.app",
   email: "sirodevske@gmail.com",
   location: "Nairobi, Kenya",
@@ -8,7 +8,7 @@ export const site = {
 } as const;
 
 export const socialLinks = {
-  x: "https://x.com/SiroFitske",
+  x: "https://x.com/SiroFromke",
   linkedin: "https://www.linkedin.com/in/sirodevs/",
   github: "https://github.com/SiroDevs",
   blog: "https://siro.hashnode.dev",

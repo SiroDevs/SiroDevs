@@ -1,9 +1,7 @@
 import { GetLatestPostsUseCase } from "@/application/use-cases/get-latest-posts.use-case";
 import { SendContactMessageUseCase } from "@/application/use-cases/send-contact-message.use-case";
-import { InitializeDonationUseCase } from "@/application/use-cases/initialize-donation.use-case";
 import { HashnodeBlogRepository } from "./blog/hashnode-blog-repository";
 import { NodemailerMessageSender } from "./mail/nodemailer-message-sender";
-import { PaystackDonationGateway } from "./donation/paystack-donation-gateway";
 
 /**
  * The only place in the app that knows which concrete adapter backs each
@@ -13,8 +11,6 @@ import { PaystackDonationGateway } from "./donation/paystack-donation-gateway";
  */
 const blogRepository = new HashnodeBlogRepository();
 const messageSender = new NodemailerMessageSender();
-const donationGateway = new PaystackDonationGateway();
 
 export const getLatestPostsUseCase = new GetLatestPostsUseCase(blogRepository);
 export const sendContactMessageUseCase = new SendContactMessageUseCase(messageSender);
-export const initializeDonationUseCase = new InitializeDonationUseCase(donationGateway);
