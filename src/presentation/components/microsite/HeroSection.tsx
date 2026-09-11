@@ -25,7 +25,6 @@ function detectPlatform(): Platform {
 interface HeroSectionProps {
   info: AppInfo;
   androidUrl: string;
-  /** Only pass this when the app also ships on iOS. */
   iosUrl?: string;
   texts: string[];
   heroImage: string;
@@ -33,7 +32,6 @@ interface HeroSectionProps {
   ctaGradient: string;
   ctaLabel?: string;
   availabilityText: string;
-  /** Shown instead of the download button when iosUrl is set but the visitor is on neither Android nor iOS. */
   noPlatformText?: string;
   rotateIntervalMs?: number;
 }
@@ -52,8 +50,6 @@ export default function HeroSection({
   rotateIntervalMs = 5000,
 }: HeroSectionProps) {
   const [index, setIndex] = useState(0);
-  // Defaults to "android" so the server-rendered markup and the first client
-  // render match; the real platform is swapped in right after mount.
   const [platform, setPlatform] = useState<Platform>("android");
 
   useEffect(() => {
@@ -72,9 +68,7 @@ export default function HeroSection({
   const isIosVisitor = Boolean(iosUrl) && platform === "ios";
   const showFallback = Boolean(iosUrl) && platform === "other";
   const ctaHref = isIosVisitor ? iosUrl! : androidUrl;
-  const ctaText = isIosVisitor
-    ? `Get ${info.appName} on the App Store`
-    : ctaLabel ?? `Get ${info.appName} Today`;
+  const ctaText = `Get ${info.appName} Today`;
 
   return (
     <section className="flex flex-col items-center justify-between py-2 lg:py-5">
@@ -108,9 +102,7 @@ export default function HeroSection({
       </h1>
 
       {showFallback ? (
-        <p className="rounded-full border border-ink/15 dark:border-cloud/15 px-6 py-3 text-center text-sm font-medium text-ink-soft dark:text-cloud-soft">
-          {noPlatformText ?? availabilityText}
-        </p>
+        <></>
       ) : (
         <>
           <a
