@@ -12,12 +12,14 @@ export default function SongLibHome() {
       <HeroSection
         info={info}
         androidUrl={AppUrls.android}
+        iosUrl={AppUrls.ios}
         texts={theme.heroTexts}
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
         ctaLabel={theme.ctaLabel}
         availabilityText={theme.availabilityText}
+        noPlatformText={theme.noPlatformText}
       />
       <Features />
       <BottomLinks

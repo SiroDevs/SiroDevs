@@ -15,7 +15,7 @@ export default function About() {
           <p>
             I&apos;m a software development engineer with over 7 years of
             experience shipping production software across native Android
-            (Kotlin), native iOS (Swift), Flutter, and React — end-to-end, from
+            (Kotlin), native iOS (Swift), Flutter, and React, end-to-end, from
             backend to mobile to web.
           </p>
 
@@ -28,15 +28,15 @@ export default function About() {
             a stakeholder&apos;s goal into a technical plan as I am writing the
             code for it. Before that, I&apos;ve shipped micro-transaction
             platforms across four African countries, revived stalled portals
-            under tight deadlines, and kept two personal apps — a Swahili
-            dictionary and a church hymn book — alive and evolving for years
+            under tight deadlines, and kept two personal apps, a Swahili
+            dictionary and a church hymn book, alive and evolving for years
             because people still use them.
           </p>
 
           <p>
-            If you're looking for someone to manifest your app idea—or save your
-            sinking ship—I am your guy. I build high-quality mobile apps with
-            Flutter, Kotlin on Android, or Swift on iOS.
+            If you&apos;re looking for someone to manifest your app idea, or
+            save your sinking ship, I am your guy. I build high-quality mobile
+            apps with Flutter, Kotlin on Android, or Swift on iOS.
           </p>
 
           <p>
@@ -48,9 +48,9 @@ export default function About() {
           </p>
 
           <p>
-            Whether you're starting from scratch, adding new features, or fixing
-            an existing codebase, I can help turn your vision into a polished,
-            production-ready product.
+            Whether you&apos;re starting from scratch, adding new features, or
+            fixing an existing codebase, I can help turn your vision into a
+            polished, production-ready product.
           </p>
         </div>
       </div>

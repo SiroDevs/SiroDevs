@@ -3,20 +3,37 @@ import type { AppFeature } from "@/domain/entities/app-entity";
 export const features: AppFeature[] = [
   {
     id: 1,
-    title: "Plot your route your way",
+    icon: "route",
+    title: "Draw Routes On the Map",
     description:
-      "Draw routes directly on the map by tapping your start point, waypoints, and destination. Choose your sport, decide between a one-way trip or a round trip, and save your route with a name and description for future use.",
+      "Tap your start point, waypoints, and destination to draw a route directly on the map, then choose your sport and decide between a one-way trip or a round trip.",
   },
   {
     id: 2,
-    title: "Build a detailed activity plan",
+    icon: "save",
+    title: "Save Routes for Later",
     description:
-      "Turn any saved route into a day-by-day schedule. Set your start date, average speed, and number of days, and YouPlot automatically generates a full event timeline — placing waypoints, pit stops, and rest breaks across your journey so you always know what to expect and when",
+      "Give any route a name and description, then save it so it's ready to reuse whenever you want to head out again.",
   },
   {
     id: 3,
-    title: "Fully offline, no subscription",
+    icon: "schedule",
+    title: "Build a Day-by-Day Plan",
     description:
-      "All your routes and plans are saved on your device. No account required, no recurring fees — just open the app and start plotting your routes and then plan your activities.",
+      "Turn a saved route into a full schedule. Set your start date, average speed, and number of days, and YouPlot generates a timeline of waypoints, pit stops, and rest breaks, so you always know what to expect and when.",
+  },
+  {
+    id: 4,
+    icon: "activity",
+    title: "Built for Every Outdoor Activity",
+    description:
+      "Whether you run, cycle, hike, or walk, YouPlot adapts your route and schedule to your sport and pace.",
+  },
+  {
+    id: 5,
+    icon: "offline",
+    title: "Fully Offline, No Subscription",
+    description:
+      "All your routes and plans are saved on your device. No account required and no recurring fees, just open the app and start plotting.",
   },
 ];

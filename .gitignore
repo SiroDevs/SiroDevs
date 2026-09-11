@@ -11,6 +11,8 @@
 # misc
 .DS_Store
 *.pem
+*.zip
+.wakatime-project
 
 # env files
 .env*.local

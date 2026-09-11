@@ -17,10 +17,10 @@ export default function Hero() {
 
           <p className="mt-2 max-w-lg text-lg leading-relaxed text-ink-soft dark:text-cloud-soft">
             A software development engineer based in Nairobi with many years of
-            manifesting ideas into apps — Flutter, Android, iOS, and Frontend. I
-            took Britam&apos;s Financial Advisors app from the ground up to the
-            App Store and Play Store, reducing onboarding clients to a paperless
-            three-minute experience
+            manifesting ideas into apps, spanning Flutter, Android, iOS, and
+            Frontend. I took Britam&apos;s Financial Advisor app from the ground
+            up to the App Store and Play Store, reducing client onboarding to a
+            paperless, three-minute experience.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-4">
