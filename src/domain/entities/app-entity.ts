@@ -18,6 +18,7 @@ export interface AppFeature {
   id: number;
   title: string;
   description: string;
+  icon?: string;
 }
 
 export interface PrivacyText {
@@ -33,6 +34,8 @@ export interface MicrositeTheme {
   ctaGradient: string;
   ctaLabel?: string;
   availabilityText: string;
+  /** Shown instead of a download button when the visitor is on neither Android nor iOS. */
+  noPlatformText?: string;
   glowClassName: string;
   iconColor: string;
   showFork: boolean;

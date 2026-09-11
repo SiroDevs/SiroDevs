@@ -24,6 +24,8 @@ export default function YouPlotHome() {
         features={features}
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
+        title="Plan It, Plot It, Live It"
+        subtitle="Everything you need to map an adventure and stay on schedule once you're out there."
       />
       <BottomLinks
         githubUrl={AppUrls.github}

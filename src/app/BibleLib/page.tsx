@@ -24,6 +24,8 @@ export default function BibleLibHome() {
         features={features}
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
+        title="Everything You Need for Focused Study"
+        subtitle="Multiple translations, powerful search, and a reading experience that stays with you offline."
       />
       <BottomLinks
         githubUrl={AppUrls.github}

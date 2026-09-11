@@ -13,17 +13,21 @@ export default function SwahiLibHome() {
       <HeroSection
         info={info}
         androidUrl={AppUrls.android}
+        iosUrl={AppUrls.ios}
         texts={theme.heroTexts}
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
         ctaLabel={theme.ctaLabel}
         availabilityText={theme.availabilityText}
+        noPlatformText={theme.noPlatformText}
       />
       <FeaturesGrid
         features={features}
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
+        title="Kila Kitu Unachohitaji"
+        subtitle="Kamusi kamili ya Kiswahili, michezo ya kujifunza, na uzoefu unaokufuata popote uendapo, hata bila mtandao."
       />
       <BottomLinks
         githubUrl={AppUrls.github}

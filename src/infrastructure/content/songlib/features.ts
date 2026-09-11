@@ -3,62 +3,79 @@ import type { AppFeature } from "@/domain/entities/app-entity";
 export const features: AppFeature[] = [
   {
     id: 1,
+    icon: "offline",
     title: "Completely Offline Access",
     description:
-      "Worship without interruption! Once set up, SongLib works entirely offline—no internet connection needed during services or personal devotion.",
+      "Worship without interruption. Once your songbooks are synced, SongLib works entirely offline, no internet connection needed during services or personal devotion.",
   },
   {
     id: 2,
+    icon: "library",
     title: "Massive Song Library",
     description:
-      "Access 24+ songbooks with over 10,000 hymns and worship songs all in one place—your complete digital hymnal.",
+      "Access 20+ songbooks with over 10,000 hymns and worship songs, all in one place, your complete digital hymnal.",
   },
   {
     id: 3,
+    icon: "languages",
     title: "Worship in Your Language",
     description:
-      "Support for 10+ African languages including English, Kiswahili, Ekegusii, Luo, Luhya, Kalenjin, Kamba, Gikuyu, Kinyarwanda, Chichewa, Bemba, and Luganda.",
+      "Support for 10+ African languages, including English, Kiswahili, Ekegusii, Luo, Luhya, Kalenjin, Kamba, Gikuyu, Kinyarwanda, Chichewa, Bemba, and Luganda.",
   },
   {
     id: 4,
+    icon: "book",
     title: "Popular Songbooks Included",
     description:
-      "Songs of Worship, Nyimbo za Injili, Third Exodus Assembly Hymnal, Tenzi za Rohoni, Nyimbo cia Kuinira Ngai, Mbathi sya Kumutaia Ngai, SDA Hymnal, Bemba Hymnal, Guhimbaza Imana, and more.",
+      "Songs of Worship, Nyimbo za Injili, Third Exodus Assembly Hymnal, Tenzi za Rohoni, SDA Hymnal, Bemba Hymnal, Guhimbaza Imana, and more, with the freedom to add or swap songbooks anytime from settings.",
   },
   {
     id: 5,
+    icon: "search",
     title: "Smart Search",
     description:
-      "Find any song instantly by title, song number, or even lyrics. No more flipping through pages during worship!",
+      "Find any song instantly by title, song number, or lyrics. No more flipping through pages during worship.",
   },
   {
     id: 6,
-    title: "Smooth Navigation",
+    icon: "presenter",
+    title: "Full-Screen Verse Presenter",
     description:
-      "Swipe effortlessly between verses with intuitive up and down gestures for a seamless worship experience.",
+      "Swipe smoothly between verses in a distraction-free, full-screen view, complete with a page-curl effect and adjustable font size.",
   },
   {
     id: 7,
-    title: "Create Custom Playlists",
+    icon: "drafts",
+    title: "Personal Drafts",
     description:
-      "Organize songs into personalized lists for services, events, or personal devotion.",
+      "Write your own song drafts and present them right alongside your songbooks, perfect for original pieces and special arrangements.",
   },
   {
     id: 8,
-    title: "Favorite Songs",
+    icon: "listings",
+    title: "Custom Song Listings",
     description:
-      "Build your collection of beloved hymns with one tap. Quick access to the songs that speak to your heart.",
+      "Organize songs into personalized listings for services, events, or personal devotion.",
   },
   {
     id: 9,
-    title: "Access SongLib on any device",
+    icon: "favorites",
+    title: "Favorite Songs",
     description:
-      "Available on Mobile: Android or iOS or on PC: Windows, Linux, and MacOS.",
+      "Build your collection of beloved hymns with one tap, quick access to the songs that speak to your heart.",
   },
   {
     id: 10,
-    title: "Flexible Songbook Selection",
+    icon: "history",
+    title: "Search & View History",
     description:
-      "Choose your preferred songbooks during setup and easily switch or add more anytime from settings.",
+      "Jump back to recently viewed songs and past searches without hunting for them again.",
+  },
+  {
+    id: 11,
+    icon: "sync",
+    title: "Contribute & Sync",
+    description:
+      "Sign in with Google to submit song corrections for admin review, and keep your drafts, edits, and songbook selections synced across every device.",
   },
 ];
