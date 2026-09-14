@@ -38,11 +38,11 @@ export default function Features() {
   return (
     <section id="features">
       <div className="mb-6 text-center">
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-ink dark:text-cloud">
+        <h2 className="font-display text-xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-2xl">
           Songbooks in Your Pocket
         </h2>
-        <p className="mt-2 text-sm sm:text-base text-ink-soft dark:text-cloud-soft">
-          A growing library of hymnals, ready to sync and read offline.
+        <p className="mx-auto mt-1.5 max-w-md text-sm text-ink-soft dark:text-cloud-soft">
+          A growing hymnal library, synced and ready offline.
         </p>
       </div>
       <div className="w-full">
@@ -72,7 +72,7 @@ export default function Features() {
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
         title="Everything You Need for Worship"
-        subtitle="From the first search to the last verse, SongLib keeps your songbook ready, offline and on."
+        subtitle="From search to full-screen presenting, offline and always ready."
       />
     </section>
   );

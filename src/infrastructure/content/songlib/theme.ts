@@ -1,16 +1,11 @@
 import type { MicrositeTheme } from "@/domain/entities/app-entity";
 
 export const theme: MicrositeTheme = {
-  heroTexts: [
-    "Your Songbook on the GO",
-    "Your Songbook on Phone",
-    "Your Songbook With You",
-  ],
+  heroTexts: ["Your Songbook,", "Always With You,", "Always Offline,"],
   heroImage: "/songlib/images/main_banner.png",
-  heroSubheading: "What if you had ...",
+  heroSubheading: "On your phone,",
   ctaGradient: "from-orange-600 to-orange-900",
-  availabilityText: "Available on Android and iOS",
-  noPlatformText: "Available on Android and iOS only",
+  availabilityText: "Android & iOS",
   glowClassName: "bg-[#432B25] text-[#EEDAC4]",
   iconColor: "#BF360C",
   showFork: false,

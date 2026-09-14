@@ -17,20 +17,19 @@ export default function BibleLibHome() {
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
-        ctaLabel={theme.ctaLabel}
         availabilityText={theme.availabilityText}
       />
       <FeaturesGrid
         features={features}
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
-        title="Everything You Need for Focused Study"
-        subtitle="Multiple translations, powerful search, and a reading experience that stays with you offline."
+        title="Built for Focused Study"
+        subtitle="Multiple translations, instant search, and offline reading."
       />
       <BottomLinks
         githubUrl={AppUrls.github}
         showFork={theme.showFork}
-        privacyHref={`/${info.appName}/privacy-policy`}
+        privacyHref={`/${info.slug}/privacy-policy`}
       />
     </div>
   );

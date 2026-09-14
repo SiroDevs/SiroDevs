@@ -1,15 +1,11 @@
 import type { MicrositeTheme } from "@/domain/entities/app-entity";
 
 export const theme: MicrositeTheme = {
-  heroTexts: [
-    "20+ bibles to choose from",
-    "10+ Languages just for you",
-    "unlimited customization",
-  ],
+  heroTexts: ["20+ Bibles,", "10+ Languages,", "Fully Offline,"],
   heroImage: "/biblelib/images/main_banner.png",
-  heroSubheading: "On your phone ...",
+  heroSubheading: "On your phone,",
   ctaGradient: "from-red-600 to-red-900",
-  availabilityText: "Available on Android only",
+  availabilityText: "Android only",
   glowClassName: "bg-[#3A1300] text-[#EEDAC4]",
   iconColor: "#FFF",
   showFork: true,

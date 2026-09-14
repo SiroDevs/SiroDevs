@@ -6,7 +6,7 @@ import { theme } from "@/infrastructure/content/songlib/theme";
 import { site } from "@/config/site";
 
 const title = `${info.callout} — ${info.tagline}`;
-const url = `${site.url}/SongLib`;
+const url = `${site.url}/${info.slug}`;
 
 export const metadata: Metadata = {
   title,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Virtual songbook",
     "Jack Siro",
   ],
-  alternates: { canonical: "/SongLib" },
+  alternates: { canonical: `/${info.slug}` },
   openGraph: {
     title,
     description: info.description,

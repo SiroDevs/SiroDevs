@@ -6,7 +6,7 @@ import { theme } from "@/infrastructure/content/swahilib/theme";
 import { site } from "@/config/site";
 
 const title = `${info.callout} — ${info.tagline}`;
-const url = `${site.url}/SwahiLib`;
+const url = `${site.url}/${info.slug}`;
 
 export const metadata: Metadata = {
   title,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "Swahili proverbs methali",
     "Swahili sayings misemo",
   ],
-  alternates: { canonical: "/SwahiLib" },
+  alternates: { canonical: `/${info.slug}` },
   openGraph: {
     title,
     description: info.description,

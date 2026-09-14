@@ -1,5 +1,7 @@
 export interface AppInfo {
   appName: string;
+  /** Lowercase URL segment for this app's microsite, e.g. "songlib". */
+  slug: string;
   appIcon: string;
   tagline: string;
   callout: string;
@@ -32,10 +34,8 @@ export interface MicrositeTheme {
   heroImage: string;
   heroSubheading: string;
   ctaGradient: string;
-  ctaLabel?: string;
+  /** Short caption shown under the download button, e.g. "Android & iOS". */
   availabilityText: string;
-  /** Shown instead of a download button when the visitor is on neither Android nor iOS. */
-  noPlatformText?: string;
   glowClassName: string;
   iconColor: string;
   showFork: boolean;

@@ -7,19 +7,29 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import type { AppInfo } from "@/domain/entities/app-entity";
 
-type Platform = "android" | "ios" | "other";
+type Platform = "ios" | "android" | "other";
 
-function detectPlatform(): Platform {
-  if (typeof navigator === "undefined") return "android";
+interface DetectedDevice {
+  platform: Platform;
+  /** Human-readable device name used in the CTA, e.g. "iPhone", "Samsung", "Android device". */
+  label: string;
+}
+
+function detectDevice(): DetectedDevice {
+  if (typeof navigator === "undefined") return { platform: "other", label: "" };
   const ua = navigator.userAgent || "";
-  if (/android/i.test(ua)) return "android";
-  if (
-    /iPhone|iPad|iPod/i.test(ua) ||
-    (ua.includes("Macintosh") && navigator.maxTouchPoints > 1)
-  ) {
-    return "ios";
+
+  if (/iPad/i.test(ua) || (ua.includes("Macintosh") && navigator.maxTouchPoints > 1)) {
+    return { platform: "ios", label: "iPad" };
   }
-  return "other";
+  if (/iPhone|iPod/i.test(ua)) {
+    return { platform: "ios", label: "iPhone" };
+  }
+  if (/android/i.test(ua)) {
+    const isSamsung = /SM-|Samsung|SAMSUNG|GT-/i.test(ua);
+    return { platform: "android", label: isSamsung ? "Samsung" : "Android device" };
+  }
+  return { platform: "other", label: "" };
 }
 
 interface HeroSectionProps {
@@ -30,9 +40,7 @@ interface HeroSectionProps {
   heroImage: string;
   subheading: string;
   ctaGradient: string;
-  ctaLabel?: string;
   availabilityText: string;
-  noPlatformText?: string;
   rotateIntervalMs?: number;
 }
 
@@ -44,13 +52,11 @@ export default function HeroSection({
   heroImage,
   subheading,
   ctaGradient,
-  ctaLabel,
   availabilityText,
-  noPlatformText,
-  rotateIntervalMs = 5000,
+  rotateIntervalMs = 4000,
 }: HeroSectionProps) {
   const [index, setIndex] = useState(0);
-  const [platform, setPlatform] = useState<Platform>("android");
+  const [device, setDevice] = useState<DetectedDevice>({ platform: "other", label: "" });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,66 +66,102 @@ export default function HeroSection({
   }, [texts.length, rotateIntervalMs]);
 
   useEffect(() => {
-    if (iosUrl) {
-      setPlatform(detectPlatform());
-    }
-  }, [iosUrl]);
+    setDevice(detectDevice());
+  }, []);
 
-  const isIosVisitor = Boolean(iosUrl) && platform === "ios";
-  const showFallback = Boolean(iosUrl) && platform === "other";
-  const ctaHref = isIosVisitor ? iosUrl! : androidUrl;
-  const ctaText = `Get ${info.appName} Today`;
+  const btnClass = `group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r ${ctaGradient} px-6 py-3.5 text-sm font-semibold text-white no-underline shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.03] hover:text-white hover:no-underline active:scale-[0.98]`;
 
+  // Visitor is on a known mobile platform: show a single, personalized CTA.
+  if (device.platform === "ios" && iosUrl) {
+    return (
+      <Hero info={info} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
+        <a className={btnClass} href={iosUrl} target="_blank" rel="noopener noreferrer">
+          <MdDownload size={17} />
+          Install {info.appName} on your {device.label}
+        </a>
+      </Hero>
+    );
+  }
+
+  if (device.platform === "android") {
+    return (
+      <Hero info={info} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
+        <a className={btnClass} href={androidUrl} target="_blank" rel="noopener noreferrer">
+          <MdDownload size={17} />
+          Install {info.appName} on your {device.label}
+        </a>
+      </Hero>
+    );
+  }
+
+  // Desktop or unknown device: show every store the app is available on.
   return (
-    <section className="flex flex-col items-center justify-between py-2 lg:py-5">
+    <Hero info={info} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
+      <div className="flex flex-col items-center gap-3 sm:flex-row">
+        <a className={btnClass} href={androidUrl} target="_blank" rel="noopener noreferrer">
+          <MdDownload size={17} />
+          Install {info.appName} on Android
+        </a>
+        {iosUrl && (
+          <a className={btnClass} href={iosUrl} target="_blank" rel="noopener noreferrer">
+            <MdDownload size={17} />
+            Install {info.appName} on iPhone
+          </a>
+        )}
+      </div>
+      <p className="mt-3 text-xs text-ink-faint dark:text-cloud-soft">{availabilityText}</p>
+    </Hero>
+  );
+}
+
+function Hero({
+  info,
+  heroImage,
+  subheading,
+  texts,
+  index,
+  children,
+}: {
+  info: AppInfo;
+  heroImage: string;
+  subheading: string;
+  texts: string[];
+  index: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="flex flex-col items-center gap-4 py-6 text-center lg:flex-row lg:gap-12 lg:py-14 lg:text-left">
       <Image
         src={heroImage}
-        width={500}
-        height={280}
-        alt={`${info.appName}'s AppIcon`}
-        className="rounded-lg transition-all duration-1000 hover:grayscale-0 hover:scale-110 cursor-pointer mb-1"
+        width={220}
+        height={220}
+        alt={`${info.appName} app icon`}
+        className="h-28 w-28 rounded-3xl shadow-xl shadow-black/10 sm:h-36 sm:w-36 lg:h-48 lg:w-48"
         priority
       />
-      <h2 className="text-center font-bold text-2xl leading-10 text-ink dark:text-cloud">
-        {subheading}
-      </h2>
 
-      <h1 className="text-ink dark:text-cloud font-bold rounded-md text-3xl sm:text-2xl md:text-xl lg:text-[2.2rem] leading-tight lg:leading-[2.8rem] mb-3">
-        <div className="h-[3rem] flex justify-center items-center w-full overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={texts[index]}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="absolute w-full text-center"
-            >
-              {texts[index]}
-            </motion.span>
-          </AnimatePresence>
-        </div>
-      </h1>
+      <div className="flex flex-col items-center lg:items-start">
+        <p className="text-sm font-medium text-ink-soft dark:text-cloud-soft">{subheading}</p>
 
-      {showFallback ? (
-        <></>
-      ) : (
-        <>
-          <a
-            className={`flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r ${ctaGradient} px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold`}
-            href={ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="text-xl">{ctaText}</span>
-            <MdDownload size={16} />
-          </a>
+        <h1 className="mt-1 text-3xl font-bold leading-tight text-ink dark:text-cloud sm:text-4xl lg:text-5xl">
+          <span className="relative inline-block h-[1.2em] min-w-[1px] overflow-hidden align-bottom">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={texts[index]}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="block whitespace-nowrap"
+              >
+                {texts[index]}
+              </motion.span>
+            </AnimatePresence>
+          </span>
+        </h1>
 
-          <p className="text-ink-soft dark:text-cloud-soft text-sm mt-2">
-            {availabilityText}
-          </p>
-        </>
-      )}
+        <div className="mt-6">{children}</div>
+      </div>
     </section>
   );
 }

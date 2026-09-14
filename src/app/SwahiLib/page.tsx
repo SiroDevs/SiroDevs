@@ -18,21 +18,19 @@ export default function SwahiLibHome() {
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
-        ctaLabel={theme.ctaLabel}
         availabilityText={theme.availabilityText}
-        noPlatformText={theme.noPlatformText}
       />
       <FeaturesGrid
         features={features}
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
-        title="Kila Kitu Unachohitaji"
-        subtitle="Kamusi kamili ya Kiswahili, michezo ya kujifunza, na uzoefu unaokufuata popote uendapo, hata bila mtandao."
+        title="Everything You Need"
+        subtitle="A complete Swahili dictionary, learning games, and offline access."
       />
       <BottomLinks
         githubUrl={AppUrls.github}
         showFork={theme.showFork}
-        privacyHref={`/${info.appName}/privacy-policy`}
+        privacyHref={`/${info.slug}/privacy-policy`}
       />
     </div>
   );

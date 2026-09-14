@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description:
       "A clean, offline-first Bible reader built for focused study. Explore a number of translations side by side, search instantly, personalize your reading experience, and keep everything organized with bookmarks, notes, reading history, and reusable scripture lists for sermons, studies, or personal devotions.",
     tags: ["Kotlin", "Jetpack Compose", "Bible"],
-    href: "/BibleLib",
+    href: "/biblelib",
     linkLabel: "View BibleLib",
   },
   {
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description:
       "YouPlot is your ultimate outdoor activity companion, designed for runners, cyclists, hikers, and walkers who want more than just a tracker. Plan your adventure before you leave, then let YouPlot keep you on schedule while you're out there.",
     tags: ["Kotlin", "Jetpack Compose", "Maps", "Open Street Maps", "GPX", "FIT"],
-    href: "/YouPlot",
+    href: "/youplot",
     linkLabel: "View YouPlot",
   },
   {
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     description:
       "An offline-first church hymn app, 8 years in the making: Java → Flutter (2020) → native Kotlin/Compose and Swift/SwiftUI (2024), on a custom MERN backend.",
     tags: ["Kotlin", "Jetpack Compose", "SwiftUI", "MongoDB"],
-    href: "/SongLib",
+    href: "/songlib",
     linkLabel: "View SongLib",
     featured: true,
   },
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     description:
       "An offline-first Swahili dictionary app, migrated from Flutter to native Kotlin/Jetpack Compose and Swift/SwiftUI on a Supabase backend.",
     tags: ["Kotlin", "Jetpack Compose", "SwiftUI", "Supabase"],
-    href: "/SwahiLib",
+    href: "/swahilib",
     linkLabel: "View SwahiLib",
     featured: true,
   },

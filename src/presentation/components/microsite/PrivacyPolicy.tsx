@@ -11,7 +11,7 @@ export default function PrivacyPolicy({ info }: PrivacyPolicyProps) {
   return (
     <div className="my-4 lg:my-8 mx-auto max-w-3xl">
       <Link
-        href={`/${info.appName}`}
+        href={`/${info.slug}`}
         className="inline-flex items-center gap-1.5 font-mono text-sm text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
       >
         <ArrowLeft size={15} />

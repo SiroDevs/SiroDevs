@@ -6,7 +6,7 @@ import { theme } from "@/infrastructure/content/youplot/theme";
 import { site } from "@/config/site";
 
 const title = `${info.callout} — ${info.tagline}`;
-const url = `${site.url}/YouPlot`;
+const url = `${site.url}/${info.slug}`;
 
 export const metadata: Metadata = {
   title,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "GPS activity tracker",
     "adventure planning app",
   ],
-  alternates: { canonical: "/YouPlot" },
+  alternates: { canonical: `/${info.slug}` },
   openGraph: {
     title,
     description: info.description,

@@ -17,15 +17,13 @@ export default function SongLibHome() {
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
-        ctaLabel={theme.ctaLabel}
         availabilityText={theme.availabilityText}
-        noPlatformText={theme.noPlatformText}
       />
       <Features />
       <BottomLinks
         githubUrl={AppUrls.github}
         showFork={theme.showFork}
-        privacyHref={`/${info.appName}/privacy-policy`}
+        privacyHref={`/${info.slug}/privacy-policy`}
       />
     </div>
   );
