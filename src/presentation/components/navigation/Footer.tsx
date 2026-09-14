@@ -1,4 +1,4 @@
-import { Github, Linkedin, X, BookOpen, Smartphone } from "lucide-react";
+import { Github, Linkedin, X, BookOpen, Smartphone, Apple } from "lucide-react";
 import { site, mylinks } from "@/config/site";
 
 const links = [
@@ -8,6 +8,7 @@ const links = [
   { label: "Tech Blog", href: mylinks.techblog, icon: BookOpen },
   { label: "Social Blog", href: mylinks.socialblog, icon: BookOpen },
   { label: "Play Store", href: mylinks.playStore, icon: Smartphone },
+  { label: "App Store", href: mylinks.appStore, icon: Apple },
 ];
 
 export default function Footer() {

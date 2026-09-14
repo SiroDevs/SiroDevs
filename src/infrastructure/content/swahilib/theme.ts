@@ -2,17 +2,15 @@ import type { MicrositeTheme } from "@/domain/entities/app-entity";
 
 export const theme: MicrositeTheme = {
   heroTexts: [
-    "Maneno 16,000+ ya Kiswahili",
-    "Nahau 100+ ya Kiswahili",
-    "Misemo 200+ ya Kiswahili",
-    "Methali 300+ ya Kiswahili",
+    "16,000+ Words,",
+    "100+ Idioms,",
+    "200+ Sayings,",
+    "300+ Proverbs,",
   ],
   heroImage: "/swahilib/images/main_banner.png",
-  heroSubheading: "Kwenye simu yako pata ...",
+  heroSubheading: "On your phone,",
   ctaGradient: "from-blue-600 to-blue-900",
-  ctaLabel: "Pata SwahiLib Leo",
-  availabilityText: "Inapatikana kwa Android na iOS",
-  noPlatformText: "Inapatikana kwa Android na iOS pekee",
+  availabilityText: "Android & iOS",
   glowClassName: "bg-[#000F40] text-[#EEDAC4]",
   iconColor: "#FFF",
   showFork: true,

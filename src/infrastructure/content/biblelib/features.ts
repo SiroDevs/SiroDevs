@@ -4,64 +4,55 @@ export const features: AppFeature[] = [
   {
     id: 1,
     icon: "offline",
-    title: "Completely Offline Access",
-    description:
-      "Read your Bible without interruption. Once downloaded, BibleLib works entirely offline, no internet connection needed during services or personal devotion.",
+    title: "Fully Offline",
+    description: "Download once, then read without a connection.",
   },
   {
     id: 2,
     icon: "library",
     title: "Massive Bible Library",
-    description:
-      "Choose from dozens of translations across countries and languages, download the ones you need and build your own personal digital library.",
+    description: "Dozens of translations across languages and countries.",
   },
   {
     id: 3,
     icon: "translations",
-    title: "Read Multiple Translations Side by Side",
-    description:
-      "Set a primary Bible and up to 5 secondary translations to read in parallel, so you can compare passages across versions at a glance.",
+    title: "Read Side by Side",
+    description: "Compare up to 6 translations in parallel view.",
   },
   {
     id: 4,
     icon: "download",
-    title: "Smart, Resumable Downloads",
-    description:
-      "Lost signal mid-download? BibleLib picks up right where it left off instead of starting over, so you never lose progress.",
+    title: "Resumable Downloads",
+    description: "Lost signal? BibleLib picks up right where it stopped.",
   },
   {
     id: 5,
     icon: "bookmarks",
     title: "Bookmarks & Notes",
-    description:
-      "Highlight verses in color, save bookmarks, and attach personal notes to any passage, all stored locally and available offline.",
+    description: "Highlight verses and attach notes, stored locally.",
   },
   {
     id: 6,
     icon: "history",
     title: "Reading History",
-    description:
-      "Automatically keep track of every chapter and translation you've read, so you can always pick up where you left off.",
+    description: "Always pick up right where you left off.",
   },
   {
     id: 7,
     icon: "personalize",
-    title: "Personalized Reading Experience",
-    description:
-      "Adjust font size, font family, and reader background to make Scripture comfortable to read, day or night.",
+    title: "Personalized Reading",
+    description: "Adjust font, size, and background for day or night.",
   },
   {
     id: 8,
     icon: "search",
-    title: "Instant Bible Search",
-    description:
-      "Search any translation by keyword or phrase and jump straight to the verse you're looking for, no more flipping through pages.",
+    title: "Instant Search",
+    description: "Search any translation and jump straight to the verse.",
   },
   {
     id: 9,
     icon: "lists",
-    title: "Scripture Opener & Saved Lists",
-    description:
-      "Queue up a run of verses ahead of time, for a sermon, Bible study, or devotion, then open them one tap at a time. Save any queue as a named list to reuse whenever you need it.",
+    title: "Saved Verse Lists",
+    description: "Queue verses for a sermon or study, then reuse anytime.",
   },
 ];

@@ -81,23 +81,23 @@ export default function FeaturesGrid({
   subtitle,
 }: FeaturesGridProps) {
   return (
-    <div className="py-8">
+    <div className="py-6 sm:py-10">
       {(title || subtitle) && (
-        <div className="mb-8 text-center">
+        <div className="mb-6 text-center sm:mb-10">
           {title && (
-            <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-ink dark:text-cloud">
+            <h2 className="font-display text-xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-2xl">
               {title}
             </h2>
           )}
           {subtitle && (
-            <p className="mt-2 text-sm sm:text-base text-ink-soft dark:text-cloud-soft">
+            <p className="mx-auto mt-1.5 max-w-md text-sm text-ink-soft dark:text-cloud-soft">
               {subtitle}
             </p>
           )}
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         {features.map((feature, i) => {
           const Icon = resolveIcon(feature.icon);
           return (
@@ -112,26 +112,17 @@ export default function FeaturesGrid({
                 identifier={`feature-${feature.id}`}
                 className={glowClassName}
               >
-                <div className="relative flex h-full flex-col gap-2 p-4">
+                <div className="relative flex h-full flex-col gap-2 p-4 sm:p-5">
                   <div
-                    className="inline-flex gap-3 transition-transform duration-300 hover:scale-105"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/10"
                     style={{ color: iconColor }}
                   >
-                    <div
-                      className="inline-flex h-7 items-center justify-center rounded-xl bg-white/10 px-2"
-                      style={{ color: iconColor }}
-                    >
-                      <Icon
-                        size={18}
-                        strokeWidth={2}
-                        className="flex-shrink-0"
-                      />
-                    </div>
-                    <p className="text-base sm:text-md font-semibold leading-snug">
-                      {feature.title}
-                    </p>
+                    <Icon size={16} strokeWidth={2} className="flex-shrink-0" />
                   </div>
-                  <p className="text-sm sm:text-[0.95rem] leading-relaxed opacity-90">
+                  <p className="text-sm font-semibold leading-snug sm:text-[0.95rem]">
+                    {feature.title}
+                  </p>
+                  <p className="text-[0.83rem] leading-relaxed opacity-80 sm:text-sm">
                     {feature.description}
                   </p>
                 </div>

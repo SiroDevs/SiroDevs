@@ -17,7 +17,6 @@ export default function YouPlotHome() {
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
-        ctaLabel={theme.ctaLabel}
         availabilityText={theme.availabilityText}
       />
       <FeaturesGrid
@@ -25,12 +24,12 @@ export default function YouPlotHome() {
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
         title="Plan It, Plot It, Live It"
-        subtitle="Everything you need to map an adventure and stay on schedule once you're out there."
+        subtitle="Map your adventure and stay on schedule out there."
       />
       <BottomLinks
         githubUrl={AppUrls.github}
         showFork={theme.showFork}
-        privacyHref={`/${info.appName}/privacy-policy`}
+        privacyHref={`/${info.slug}/privacy-policy`}
       />
     </div>
   );

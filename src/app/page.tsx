@@ -28,6 +28,8 @@ const personJsonLd = {
     mylinks.x,
     mylinks.techblog,
     mylinks.socialblog,
+    mylinks.playStore,
+    mylinks.appStore,
   ],
 };
 

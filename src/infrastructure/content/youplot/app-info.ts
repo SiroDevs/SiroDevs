@@ -2,9 +2,10 @@ import type { AppInfo } from "@/domain/entities/app-entity";
 
 export const info: AppInfo = {
   appName: "YouPlot",
+  slug: "youplot",
   appIcon: "/youplot/icons/app_icon.png",
   callout: "Get YouPlot",
-  tagline: "You dream it, You plot it",
+  tagline: "You Dream It, You Plot It",
   description:
-    "YouPlot is your ultimate outdoor activity companion, designed for runners, cyclists, hikers, and walkers who want more than just a tracker. Plan your adventure before you leave, then let YouPlot keep you on schedule while you're out there."
+    "YouPlot is your outdoor activity companion for runners, cyclists, hikers, and walkers. Plan your route, then stay on schedule out there.",
 };
