@@ -7,13 +7,14 @@ import { AppUrls } from "@/infrastructure/content/biblelib/app-urls";
 import { features } from "@/infrastructure/content/biblelib/features";
 import { theme } from "@/infrastructure/content/biblelib/theme";
 
-export default function BibleLibHome() {
+export default function BiblelibHome() {
   return (
     <div suppressHydrationWarning>
       <HeroSection
         info={info}
         androidUrl={AppUrls.android}
         texts={theme.heroTexts}
+        iconImage={info.appIcon}
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}

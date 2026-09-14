@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title,
   description: info.description,
   keywords: [
-    "YouPlot",
+    "Youplot",
     "outdoor route planner",
     "hiking route planner app",
     "running route planner",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function YouPlotLayout({
+export default function YouplotLayout({
   children,
 }: {
   children: React.ReactNode;

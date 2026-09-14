@@ -8,7 +8,7 @@ export interface AppInfo {
   description: string;
 }
 
-export interface SongLibBook {
+export interface SonglibBook {
   bookId: number;
   title: string;
   subTitle: string;

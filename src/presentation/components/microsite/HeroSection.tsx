@@ -37,6 +37,7 @@ interface HeroSectionProps {
   androidUrl: string;
   iosUrl?: string;
   texts: string[];
+  iconImage: string;
   heroImage: string;
   subheading: string;
   ctaGradient: string;
@@ -49,6 +50,7 @@ export default function HeroSection({
   androidUrl,
   iosUrl,
   texts,
+  iconImage,
   heroImage,
   subheading,
   ctaGradient,
@@ -74,7 +76,7 @@ export default function HeroSection({
   // Visitor is on a known mobile platform: show a single, personalized CTA.
   if (device.platform === "ios" && iosUrl) {
     return (
-      <Hero info={info} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
+      <Hero info={info} iconImage={iconImage} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
         <a className={btnClass} href={iosUrl} target="_blank" rel="noopener noreferrer">
           <MdDownload size={17} />
           Install {info.appName} on your {device.label}
@@ -85,7 +87,7 @@ export default function HeroSection({
 
   if (device.platform === "android") {
     return (
-      <Hero info={info} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
+      <Hero info={info} iconImage={iconImage} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
         <a className={btnClass} href={androidUrl} target="_blank" rel="noopener noreferrer">
           <MdDownload size={17} />
           Install {info.appName} on your {device.label}
@@ -96,7 +98,7 @@ export default function HeroSection({
 
   // Desktop or unknown device: show every store the app is available on.
   return (
-    <Hero info={info} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
+    <Hero info={info} iconImage={iconImage} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
       <div className="flex flex-col items-center gap-3 sm:flex-row">
         <a className={btnClass} href={androidUrl} target="_blank" rel="noopener noreferrer">
           <MdDownload size={17} />
@@ -116,6 +118,7 @@ export default function HeroSection({
 
 function Hero({
   info,
+  iconImage,
   heroImage,
   subheading,
   texts,
@@ -123,6 +126,7 @@ function Hero({
   children,
 }: {
   info: AppInfo;
+  iconImage: string;
   heroImage: string;
   subheading: string;
   texts: string[];
@@ -132,7 +136,7 @@ function Hero({
   return (
     <section className="flex flex-col items-center gap-4 py-6 text-center lg:flex-row lg:gap-12 lg:py-14 lg:text-left">
       <Image
-        src={heroImage}
+        src={iconImage}
         width={220}
         height={220}
         alt={`${info.appName} app icon`}

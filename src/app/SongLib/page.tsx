@@ -6,7 +6,7 @@ import { info } from "@/infrastructure/content/songlib/app-info";
 import { AppUrls } from "@/infrastructure/content/songlib/app-urls";
 import { theme } from "@/infrastructure/content/songlib/theme";
 
-export default function SongLibHome() {
+export default function SonglibHome() {
   return (
     <div suppressHydrationWarning>
       <HeroSection
@@ -14,6 +14,7 @@ export default function SongLibHome() {
         androidUrl={AppUrls.android}
         iosUrl={AppUrls.ios}
         texts={theme.heroTexts}
+        iconImage={info.appIcon}
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
