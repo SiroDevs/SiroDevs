@@ -8,8 +8,8 @@ import { mylinks } from "@/config/site";
 const links = [
   { href: "/#about", label: "About Me" },
   { href: "/projects", label: "My Projects" },
-  { href: "/songlib", label: "SongLib" },
-  { href: "/swahilib", label: "SwahiLib" },
+  { href: "/songlib", label: "Songlib" },
+  { href: "/swahilib", label: "Swahilib" },
   { href: mylinks.techblog, label: "Tech Blog" },
   { href: mylinks.socialblog, label: "Social Blog" },
 ];

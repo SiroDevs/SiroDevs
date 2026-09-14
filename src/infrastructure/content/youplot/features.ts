@@ -23,7 +23,7 @@ export const features: AppFeature[] = [
     id: 4,
     icon: "activity",
     title: "Every Outdoor Activity",
-    description: "Run, cycle, hike, or walk, YouPlot adapts to your pace.",
+    description: "Run, cycle, hike, or walk, Youplot adapts to your pace.",
   },
   {
     id: 5,

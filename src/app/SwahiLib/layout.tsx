@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title,
   description: info.description,
   keywords: [
-    "SwahiLib",
+    "Swahilib",
     "Kamusi ya Kiswahili",
     "Swahili dictionary app",
     "Kiswahili Kitukuzwe",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function SwahiLibLayout({
+export default function SwahilibLayout({
   children,
 }: {
   children: React.ReactNode;

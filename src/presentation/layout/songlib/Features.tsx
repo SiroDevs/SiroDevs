@@ -5,13 +5,13 @@ import Marquee from "react-fast-marquee";
 
 import { features } from "@/infrastructure/content/songlib/features";
 import { theme } from "@/infrastructure/content/songlib/theme";
-import type { SongLibBook } from "@/domain/entities/app-entity";
+import type { SonglibBook } from "@/domain/entities/app-entity";
 import { fetchBooks } from "@/infrastructure/songlib/songlib-api";
 import FeaturesGrid from "@/presentation/components/microsite/FeaturesGrid";
 import BookCard from "@/presentation/layout/songlib/BookCard";
 
 export default function Features() {
-  const [books, setBooks] = useState<SongLibBook[]>([]);
+  const [books, setBooks] = useState<SonglibBook[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

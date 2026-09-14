@@ -1,6 +1,6 @@
-import type { SongLibBook } from "@/domain/entities/app-entity";
+import type { SonglibBook } from "@/domain/entities/app-entity";
 
-export default function BookCard({ book }: { book: SongLibBook }) {
+export default function BookCard({ book }: { book: SonglibBook }) {
   return (
     <div
       className="w-32 h-32 flex flex-col items-center justify-center transition-transform duration-500 m-3 sm:m-5 rounded-full group relative hover:scale-110 cursor-pointer"

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title,
   description: info.description,
   keywords: [
-    "SongLib",
+    "Songlib",
     "vSongBook",
     "Songs of Worship",
     "Nyimbo za Injili",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function SongLibLayout({
+export default function SonglibLayout({
   children,
 }: {
   children: React.ReactNode;

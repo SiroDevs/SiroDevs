@@ -7,13 +7,14 @@ import { AppUrls } from "@/infrastructure/content/youplot/app-urls";
 import { features } from "@/infrastructure/content/youplot/features";
 import { theme } from "@/infrastructure/content/youplot/theme";
 
-export default function YouPlotHome() {
+export default function YouplotHome() {
   return (
     <div suppressHydrationWarning>
       <HeroSection
         info={info}
         androidUrl={AppUrls.android}
         texts={theme.heroTexts}
+        iconImage={info.appIcon}
         heroImage={theme.heroImage}
         subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
