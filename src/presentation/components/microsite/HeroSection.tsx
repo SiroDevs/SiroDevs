@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { MdDownload } from "react-icons/md";
 
 import type { AppInfo } from "@/domain/entities/app-entity";
 import { useDevice } from "@/presentation/hooks/useDevice";
+import { detectDevice, getStoreVisibility } from "@/presentation/lib/device";
 
 interface HeroSectionProps {
   info: AppInfo;
@@ -40,8 +40,14 @@ export default function HeroSection({
     }, rotateIntervalMs);
     return () => clearInterval(interval);
   }, [texts.length, rotateIntervalMs]);
-
-  const btnClass = `group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r ${ctaGradient} px-6 py-3.5 text-sm font-semibold text-white no-underline shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.03] hover:text-white hover:no-underline active:scale-[0.98]`;
+  const storeVisibility = useMemo(() => {
+    if (typeof window === "undefined") return "all" as const;
+    return getStoreVisibility(detectDevice(), iosUrl);
+  }, [iosUrl]);
+  const showAndroid =
+    storeVisibility === "android" || storeVisibility === "all";
+  const showIos =
+    (storeVisibility === "ios" || storeVisibility === "all") && !!iosUrl;
 
   return (
     <section className="relative overflow-hidden">
@@ -103,6 +109,7 @@ export default function HeroSection({
 
           <div className="mt-7 flex flex-col items-center gap-3">
             <div className="flex items-center gap-3">
+              {showAndroid && (
                 <a
                   href={androidUrl}
                   target="_blank"
@@ -118,25 +125,27 @@ export default function HeroSection({
                     className="h-10 w-auto rounded-md"
                   />
                 </a>
-                {iosUrl && (
-                  <a
-                    href={iosUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Download on the App Store"
-                  >
-                    <Image
-                      src="/images/ios.png"
-                      alt="Download on the App Store"
-                      width={160}
-                      height={50}
-                      loading="eager"
-                      className="h-10 w-auto rounded-md"
-                    />
-                  </a>
-                )}
-              </div>
-              
+              )}
+
+              {showIos && (
+                <a
+                  href={iosUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download on the App Store"
+                >
+                  <Image
+                    src="/images/ios.png"
+                    alt="Download on the App Store"
+                    width={160}
+                    height={50}
+                    loading="eager"
+                    className="h-10 w-auto rounded-md"
+                  />
+                </a>
+              )}
+            </div>
+
             <p className="text-xs text-ink-faint dark:text-cloud-soft">
               Available on {availabilityText}
             </p>

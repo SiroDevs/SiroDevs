@@ -1,10 +1,10 @@
 "use client";
 
-import { MdDownload } from "react-icons/md";
 import Image from "next/image";
 
 import type { AppInfo } from "@/domain/entities/app-entity";
-import { useDevice } from "@/presentation/hooks/useDevice";
+import { detectDevice, getStoreVisibility } from "@/presentation/lib/device";
+import { useMemo } from "react";
 
 interface CtaBannerProps {
   info: AppInfo;
@@ -19,7 +19,14 @@ export default function CtaBanner({
   iosUrl,
   ctaGradient,
 }: CtaBannerProps) {
-  const device = useDevice();
+  const storeVisibility = useMemo(() => {
+    if (typeof window === "undefined") return "all" as const;
+    return getStoreVisibility(detectDevice(), iosUrl);
+  }, [iosUrl]);
+  const showAndroid =
+    storeVisibility === "android" || storeVisibility === "all";
+  const showIos =
+    (storeVisibility === "ios" || storeVisibility === "all") && !!iosUrl;
 
   return (
     <section className="container-page py-6 sm:py-10">
@@ -35,22 +42,25 @@ export default function CtaBanner({
 
         <div className="mt-7 flex flex-col items-center gap-3">
           <div className="flex items-center gap-3">
-            <a
-              href={androidUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get it on Google Play"
-            >
-              <Image
-                src="/images/android.png"
-                alt="Get it on Google Play"
-                width={160}
-                height={50}
-                loading="eager"
-                className="h-10 w-auto rounded-md"
-              />
-            </a>
-            {iosUrl && (
+            {showAndroid && (
+              <a
+                href={androidUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+              >
+                <Image
+                  src="/images/android.png"
+                  alt="Get it on Google Play"
+                  width={160}
+                  height={50}
+                  loading="eager"
+                  className="h-10 w-auto rounded-md"
+                />
+              </a>
+            )}
+
+            {showIos && (
               <a
                 href={iosUrl}
                 target="_blank"
