@@ -3,7 +3,7 @@ import type { AppInfo } from "@/domain/entities/app-entity";
 export const info: AppInfo = {
   appName: "YouPlot",
   slug: "youplot",
-  appIcon: "/youplot/icons/app_icon.png",
+  appIcon: "/youplot/app_icon.png",
   callout: "Get YouPlot",
   tagline: "You Dream It, You Plot It",
   description:

@@ -23,7 +23,7 @@ export const features: AppFeature[] = [
     id: 4,
     icon: "download",
     title: "Resumable Downloads",
-    description: "Lost signal? Biblelib picks up right where it stopped.",
+    description: "Lost signal? BibleLib picks up right where it stopped.",
   },
   {
     id: 5,

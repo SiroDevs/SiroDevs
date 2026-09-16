@@ -1,12 +1,12 @@
 import HeroSection from "@/presentation/components/microsite/HeroSection";
-import BottomLinks from "@/presentation/components/microsite/BottomLinks";
+import CtaBanner from "@/presentation/components/microsite/CtaBanner";
 import Features from "@/presentation/layout/songlib/Features";
 
 import { info } from "@/infrastructure/content/songlib/app-info";
 import { AppUrls } from "@/infrastructure/content/songlib/app-urls";
 import { theme } from "@/infrastructure/content/songlib/theme";
 
-export default function SonglibHome() {
+export default function SongLibHome() {
   return (
     <div suppressHydrationWarning>
       <HeroSection
@@ -14,17 +14,17 @@ export default function SonglibHome() {
         androidUrl={AppUrls.android}
         iosUrl={AppUrls.ios}
         texts={theme.heroTexts}
-        iconImage={info.appIcon}
         heroImage={theme.heroImage}
-        subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
+        accent={theme.accent}
         availabilityText={theme.availabilityText}
       />
       <Features />
-      <BottomLinks
-        githubUrl={AppUrls.github}
-        showFork={theme.showFork}
-        privacyHref={`/${info.slug}/privacy-policy`}
+      <CtaBanner
+        info={info}
+        androidUrl={AppUrls.android}
+        iosUrl={AppUrls.ios}
+        ctaGradient={theme.ctaGradient}
       />
     </div>
   );

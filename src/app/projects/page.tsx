@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
 import Navbar from "@/presentation/components/navigation/Navbar";
@@ -8,14 +7,7 @@ import { Card } from "@/presentation/components/ui/Card";
 import { Tag } from "@/presentation/components/ui/Tag";
 import { Eyebrow, RedDot } from "@/presentation/components/ui/Eyebrow";
 import { projects } from "@/infrastructure/content/projects.data";
-import { site, mylinks } from "@/config/site";
-
-export const metadata: Metadata = {
-  title: `Projects — ${site.name}`,
-  description:
-    "A full list of the apps, platforms, and open-source work Siro has built — spanning Flutter, native Android and iOS, React, Next.js, and Laravel.",
-  alternates: { canonical: "/projects" },
-};
+import { mylinks } from "@/config/site";
 
 export default function ProjectsPage() {
   return (

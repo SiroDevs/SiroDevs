@@ -23,7 +23,7 @@ export const projects: Project[] = [
     name: "YouPlot",
     period: "April 2026 - Present",
     description:
-      "YouPlot is your ultimate outdoor activity companion, designed for runners, cyclists, hikers, and walkers who want more than just a tracker. Plan your adventure before you leave, then let Youplot keep you on schedule while you're out there.",
+      "YouPlot is your ultimate outdoor activity companion, designed for runners, cyclists, hikers, and walkers who want more than just a tracker. Plan your adventure before you leave, then let YouPlot keep you on schedule while you're out there.",
     tags: ["Kotlin", "Jetpack Compose", "Maps", "Open Street Maps", "GPX", "FIT"],
     href: "/youplot",
     linkLabel: "View YouPlot",

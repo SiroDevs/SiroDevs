@@ -32,7 +32,7 @@ export default function GlowCard({
     };
 
     const UPDATE = (event: PointerEvent) => {
-      for (const CARD of CARDS) {
+      Array.from(CARDS).forEach((CARD) => {
         const CARD_BOUNDS = CARD.getBoundingClientRect();
 
         if (
@@ -59,7 +59,7 @@ export default function GlowCard({
         ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
 
         CARD.style.setProperty("--start", `${ANGLE + 90}`);
-      }
+      });
     };
 
     const RESTYLE = () => {
