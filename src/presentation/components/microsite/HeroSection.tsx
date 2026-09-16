@@ -1,46 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { MdDownload } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
+import { MdDownload } from "react-icons/md";
 
 import type { AppInfo } from "@/domain/entities/app-entity";
-
-type Platform = "ios" | "android" | "other";
-
-interface DetectedDevice {
-  platform: Platform;
-  /** Human-readable device name used in the CTA, e.g. "iPhone", "Samsung", "Android device". */
-  label: string;
-}
-
-function detectDevice(): DetectedDevice {
-  if (typeof navigator === "undefined") return { platform: "other", label: "" };
-  const ua = navigator.userAgent || "";
-
-  if (/iPad/i.test(ua) || (ua.includes("Macintosh") && navigator.maxTouchPoints > 1)) {
-    return { platform: "ios", label: "iPad" };
-  }
-  if (/iPhone|iPod/i.test(ua)) {
-    return { platform: "ios", label: "iPhone" };
-  }
-  if (/android/i.test(ua)) {
-    const isSamsung = /SM-|Samsung|SAMSUNG|GT-/i.test(ua);
-    return { platform: "android", label: isSamsung ? "Samsung" : "Android device" };
-  }
-  return { platform: "other", label: "" };
-}
+import { useDevice } from "@/presentation/hooks/useDevice";
+import { getInstallCta } from "@/presentation/lib/device";
 
 interface HeroSectionProps {
   info: AppInfo;
   androidUrl: string;
   iosUrl?: string;
   texts: string[];
-  iconImage: string;
-  heroImage: string;
-  subheading: string;
+  heroImage?: string;
   ctaGradient: string;
+  accent: string;
   availabilityText: string;
   rotateIntervalMs?: number;
 }
@@ -50,121 +26,153 @@ export default function HeroSection({
   androidUrl,
   iosUrl,
   texts,
-  iconImage,
   heroImage,
-  subheading,
   ctaGradient,
+  accent,
   availabilityText,
-  rotateIntervalMs = 4000,
+  rotateIntervalMs = 2800,
 }: HeroSectionProps) {
   const [index, setIndex] = useState(0);
-  const [device, setDevice] = useState<DetectedDevice>({ platform: "other", label: "" });
+  const device = useDevice();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      setIndex((prev) => (prev + 1) % texts.length);
     }, rotateIntervalMs);
     return () => clearInterval(interval);
   }, [texts.length, rotateIntervalMs]);
 
-  useEffect(() => {
-    setDevice(detectDevice());
-  }, []);
-
+  const cta = getInstallCta(device, info.appName, androidUrl, iosUrl);
   const btnClass = `group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r ${ctaGradient} px-6 py-3.5 text-sm font-semibold text-white no-underline shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.03] hover:text-white hover:no-underline active:scale-[0.98]`;
 
-  // Visitor is on a known mobile platform: show a single, personalized CTA.
-  if (device.platform === "ios" && iosUrl) {
-    return (
-      <Hero info={info} iconImage={iconImage} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
-        <a className={btnClass} href={iosUrl} target="_blank" rel="noopener noreferrer">
-          <MdDownload size={17} />
-          Install {info.appName} on your {device.label}
-        </a>
-      </Hero>
-    );
-  }
-
-  if (device.platform === "android") {
-    return (
-      <Hero info={info} iconImage={iconImage} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
-        <a className={btnClass} href={androidUrl} target="_blank" rel="noopener noreferrer">
-          <MdDownload size={17} />
-          Install {info.appName} on your {device.label}
-        </a>
-      </Hero>
-    );
-  }
-
-  // Desktop or unknown device: show every store the app is available on.
   return (
-    <Hero info={info} iconImage={iconImage} heroImage={heroImage} subheading={subheading} texts={texts} index={index}>
-      <div className="flex flex-col items-center gap-3 sm:flex-row">
-        <a className={btnClass} href={androidUrl} target="_blank" rel="noopener noreferrer">
-          <MdDownload size={17} />
-          Install {info.appName} on Android
-        </a>
-        {iosUrl && (
-          <a className={btnClass} href={iosUrl} target="_blank" rel="noopener noreferrer">
-            <MdDownload size={17} />
-            Install {info.appName} on iPhone
-          </a>
-        )}
+    <section className="relative overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      >
+        <div
+          className="absolute -top-32 left-1/2 h-80 w-80 -translate-x-[85%] rounded-full opacity-25 blur-3xl sm:h-[26rem] sm:w-[26rem]"
+          style={{ backgroundColor: accent }}
+        />
+        <div
+          className="absolute -top-16 left-1/2 h-72 w-72 translate-x-[10%] rounded-full opacity-[0.15] blur-3xl sm:h-96 sm:w-96"
+          style={{ backgroundColor: accent }}
+        />
       </div>
-      <p className="mt-3 text-xs text-ink-faint dark:text-cloud-soft">{availabilityText}</p>
-    </Hero>
-  );
-}
 
-function Hero({
-  info,
-  iconImage,
-  heroImage,
-  subheading,
-  texts,
-  index,
-  children,
-}: {
-  info: AppInfo;
-  iconImage: string;
-  heroImage: string;
-  subheading: string;
-  texts: string[];
-  index: number;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="flex flex-col items-center gap-4 py-6 text-center lg:flex-row lg:gap-12 lg:py-14 lg:text-left">
-      <Image
-        src={iconImage}
-        width={220}
-        height={220}
-        alt={`${info.appName} app icon`}
-        className="h-28 w-28 rounded-3xl shadow-xl shadow-black/10 sm:h-36 sm:w-36 lg:h-48 lg:w-48"
-        priority
-      />
+      <div
+        className={`container-page grid grid-cols-1 items-center gap-10 py-14 sm:py-20 ${
+          heroImage
+            ? "lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-8 lg:py-24"
+            : "lg:py-28"
+        }`}
+      >
+        <div
+          className={`flex flex-col items-center text-center ${heroImage ? "lg:items-start lg:text-left" : ""}`}
+        >
+          <div className="mb-5 flex items-center gap-2.5">
+            <Image
+              src={info.appIcon}
+              alt=""
+              width={100}
+              height={100}
+              loading="eager"
+              className="h-27 w-27 rounded-[20%] object-cover shadow-md ring-1 ring-black/5"
+            />
+          </div>
 
-      <div className="flex flex-col items-center lg:items-start">
-        <p className="text-sm font-medium text-ink-soft dark:text-cloud-soft">{subheading}</p>
-
-        <h1 className="mt-1 text-3xl font-bold leading-tight text-ink dark:text-cloud sm:text-4xl lg:text-5xl">
-          <span className="relative inline-block h-[1.2em] min-w-[1px] overflow-hidden align-bottom">
+          <h1 className="max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-ink dark:text-cloud sm:text-5xl lg:text-[3.4rem]">
+            {info.appName}
+          </h1>
+          <h3 className="max-w-xl text-xl font-semibold leading-tight tracking-tight text-ink/70 dark:text-cloud/70 sm:text-2xl">
+            {info.tagline}
+          </h3>
+          <div className="relative mt-4 h-6 w-full max-w-md overflow-hidden text-base font-medium text-ink-soft dark:text-cloud-soft sm:text-lg">
             <AnimatePresence mode="wait">
-              <motion.span
+              <motion.p
                 key={texts[index]}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="block whitespace-nowrap"
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="absolute inset-x-0 lg:inset-x-auto"
               >
                 {texts[index]}
-              </motion.span>
+              </motion.p>
             </AnimatePresence>
-          </span>
-        </h1>
+          </div>
 
-        <div className="mt-6">{children}</div>
+          <div className="mt-7 flex flex-col items-center gap-3">
+            {cta ? (
+              <a
+                className={btnClass}
+                href={cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MdDownload size={18} />
+                {cta.label}
+              </a>
+            ) : (
+              <div className="flex items-center gap-3">
+                <a
+                  href={androidUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get it on Google Play"
+                >
+                  <Image
+                    src="/images/android.png"
+                    alt="Get it on Google Play"
+                    width={160}
+                    height={50}
+                    loading="eager"
+                    className="h-10 w-auto rounded-md"
+                  />
+                </a>
+                {iosUrl && (
+                  <a
+                    href={iosUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download on the App Store"
+                  >
+                    <Image
+                      src="/images/ios.png"
+                      alt="Download on the App Store"
+                      width={160}
+                      height={50}
+                      loading="eager"
+                      className="h-10 w-auto rounded-md"
+                    />
+                  </a>
+                )}
+              </div>
+            )}
+            <p className="text-xs text-ink-faint dark:text-cloud-soft">
+              Available on {availabilityText}
+            </p>
+          </div>
+        </div>
+
+        {heroImage && (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative aspect-[16/10] w-full"
+          >
+            <Image
+              src={heroImage}
+              alt={`${info.appName} shown on a phone screen`}
+              fill
+              sizes="(min-width: 1024px) 55vw, 92vw"
+              className="object-contain drop-shadow-2xl"
+              priority
+            />
+          </motion.div>
+        )}
       </div>
     </section>
   );

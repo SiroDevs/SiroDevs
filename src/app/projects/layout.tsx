@@ -1,26 +1,34 @@
 import type { Metadata } from "next";
 
-import MicrositeShell from "@/presentation/components/microsite/MicrositeShell";
 import { info } from "@/infrastructure/content/songlib/app-info";
 import { theme } from "@/infrastructure/content/songlib/theme";
-import { AppUrls } from "@/infrastructure/content/songlib/app-urls";
 import { site } from "@/config/site";
 
-const title = `${info.callout} — ${info.tagline}`;
-const url = `${site.url}/${info.slug}`;
+const title = `Projects - Everything ${site.brand} works on`;
+const description = "Every shipped app, revived portal, and long-running side project — from client work to apps I still maintain for fun, years later.";
+const url = `${site.url}/projects`;
 const ogImage = theme.heroImage ?? info.appIcon;
 
 export const metadata: Metadata = {
   title,
-  description: info.description,
+  description: description,
   keywords: [
-    "SongLib",
-    "vSongBook",
-    "Songs of Worship",
-    "Nyimbo za Injili",
-    "Believers Songbook",
-    "Virtual songbook",
+    "Siro Jackson",
+    "SiroDevs",
     "Jack Siro",
+    "Siro Jack",
+    "Jackson Siro",
+    "Software Developer Engineer Nairobi",
+    "Flutter Developer Kenya",
+    "Android Developer",
+    "iOS Developer",
+    "React Developer",
+    "Kotlin",
+    "Flutter",
+    "iOS",
+    "Swift",
+    "React",
+    "Mobile App Developer Kenya",
   ],
   alternates: { canonical: `/${info.slug}` },
   openGraph: {
@@ -41,21 +49,14 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function SongLibLayout({
+export default function PageLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <MicrositeShell
-      info={info}
-      androidUrl={AppUrls.android}
-      iosUrl={AppUrls.ios}
-      githubUrl={AppUrls.github}
-      showFork={theme.showFork}
-      ctaGradient={theme.ctaGradient}
-    >
+    <div>
       {children}
-    </MicrositeShell>
+    </div>
   );
 }

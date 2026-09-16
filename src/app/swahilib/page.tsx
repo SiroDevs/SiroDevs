@@ -1,13 +1,13 @@
 import HeroSection from "@/presentation/components/microsite/HeroSection";
 import FeaturesGrid from "@/presentation/components/microsite/FeaturesGrid";
-import BottomLinks from "@/presentation/components/microsite/BottomLinks";
+import CtaBanner from "@/presentation/components/microsite/CtaBanner";
 
 import { info } from "@/infrastructure/content/swahilib/app-info";
 import { AppUrls } from "@/infrastructure/content/swahilib/app-urls";
 import { features } from "@/infrastructure/content/swahilib/features";
 import { theme } from "@/infrastructure/content/swahilib/theme";
 
-export default function SwahilibHome() {
+export default function SwahiLibHome() {
   return (
     <div suppressHydrationWarning>
       <HeroSection
@@ -15,23 +15,24 @@ export default function SwahilibHome() {
         androidUrl={AppUrls.android}
         iosUrl={AppUrls.ios}
         texts={theme.heroTexts}
-        iconImage={info.appIcon}
         heroImage={theme.heroImage}
-        subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
+        accent={theme.accent}
         availabilityText={theme.availabilityText}
       />
       <FeaturesGrid
         features={features}
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
+        eyebrow="Why SwahiLib"
         title="Everything You Need"
         subtitle="A complete Swahili dictionary, learning games, and offline access."
       />
-      <BottomLinks
-        githubUrl={AppUrls.github}
-        showFork={theme.showFork}
-        privacyHref={`/${info.slug}/privacy-policy`}
+      <CtaBanner
+        info={info}
+        androidUrl={AppUrls.android}
+        iosUrl={AppUrls.ios}
+        ctaGradient={theme.ctaGradient}
       />
     </div>
   );

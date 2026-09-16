@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+
 import "./globals.css";
 import ThemeProvider from "@/presentation/theme/ThemeProvider";
 import { site } from "@/config/site";
 
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
+const mono = { variable: "--font-mono", className: "" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

@@ -2,14 +2,14 @@ import type { MicrositeTheme } from "@/domain/entities/app-entity";
 
 export const theme: MicrositeTheme = {
   heroTexts: [
-    "16,000+ Words,",
-    "100+ Idioms,",
-    "200+ Sayings,",
-    "300+ Proverbs,",
+    "17,000+ Words (Maneno)",
+    "100+ Idioms (Nahau)",
+    "200+ Sayings (Misemo)",
+    "300+ Proverbs (Methali)",
   ],
-  heroImage: "/swahilib/images/main_banner.png",
-  heroSubheading: "On your phone,",
+  heroImage: "/swahilib/main_banner.png",
   ctaGradient: "from-blue-600 to-blue-900",
+  accent: "#003297",
   availabilityText: "Android & iOS",
   glowClassName: "bg-[#000F40] text-[#EEDAC4]",
   iconColor: "#FFF",

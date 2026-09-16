@@ -1,36 +1,36 @@
 import HeroSection from "@/presentation/components/microsite/HeroSection";
 import FeaturesGrid from "@/presentation/components/microsite/FeaturesGrid";
-import BottomLinks from "@/presentation/components/microsite/BottomLinks";
+import CtaBanner from "@/presentation/components/microsite/CtaBanner";
 
 import { info } from "@/infrastructure/content/biblelib/app-info";
 import { AppUrls } from "@/infrastructure/content/biblelib/app-urls";
 import { features } from "@/infrastructure/content/biblelib/features";
 import { theme } from "@/infrastructure/content/biblelib/theme";
 
-export default function BiblelibHome() {
+export default function BibleLibHome() {
   return (
     <div suppressHydrationWarning>
       <HeroSection
         info={info}
         androidUrl={AppUrls.android}
         texts={theme.heroTexts}
-        iconImage={info.appIcon}
         heroImage={theme.heroImage}
-        subheading={theme.heroSubheading}
         ctaGradient={theme.ctaGradient}
+        accent={theme.accent}
         availabilityText={theme.availabilityText}
       />
       <FeaturesGrid
         features={features}
         glowClassName={theme.glowClassName}
         iconColor={theme.iconColor}
+        eyebrow="Why BibleLib"
         title="Built for Focused Study"
         subtitle="Multiple translations, instant search, and offline reading."
       />
-      <BottomLinks
-        githubUrl={AppUrls.github}
-        showFork={theme.showFork}
-        privacyHref={`/${info.slug}/privacy-policy`}
+      <CtaBanner
+        info={info}
+        androidUrl={AppUrls.android}
+        ctaGradient={theme.ctaGradient}
       />
     </div>
   );

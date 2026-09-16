@@ -3,10 +3,12 @@ import type { Metadata } from "next";
 import MicrositeShell from "@/presentation/components/microsite/MicrositeShell";
 import { info } from "@/infrastructure/content/biblelib/app-info";
 import { theme } from "@/infrastructure/content/biblelib/theme";
+import { AppUrls } from "@/infrastructure/content/biblelib/app-urls";
 import { site } from "@/config/site";
 
 const title = `${info.callout} — ${info.tagline}`;
 const url = `${site.url}/${info.slug}`;
+const ogImage = theme.heroImage ?? info.appIcon;
 
 export const metadata: Metadata = {
   title,
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     description: info.description,
     url,
     siteName: info.appName,
-    images: [{ url: theme.heroImage, width: 1200, height: 630, alt: title }],
+    images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     locale: "en_US",
     type: "website",
   },
@@ -34,15 +36,25 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description: info.description,
-    images: [theme.heroImage],
+    images: [ogImage],
   },
   robots: { index: true, follow: true },
 };
 
-export default function BiblelibLayout({
+export default function BibleLibLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <MicrositeShell>{children}</MicrositeShell>;
+  return (
+    <MicrositeShell
+      info={info}
+      androidUrl={AppUrls.android}
+      githubUrl={AppUrls.github}
+      showFork={theme.showFork}
+      ctaGradient={theme.ctaGradient}
+    >
+      {children}
+    </MicrositeShell>
+  );
 }

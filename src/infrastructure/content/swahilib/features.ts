@@ -4,8 +4,8 @@ export const features: AppFeature[] = [
   {
     id: 1,
     icon: "quote",
-    title: "Words, Idioms & Proverbs",
-    description: "16,000+ words, idioms, sayings, and proverbs, all searchable.",
+    title: "Words, Idioms, Sayings & Proverbs",
+    description: "16,000+ words, idioms, sayings, and proverbs.",
   },
   {
     id: 2,
@@ -17,12 +17,12 @@ export const features: AppFeature[] = [
     id: 3,
     icon: "search",
     title: "Instant Search",
-    description: "Find any word, idiom, saying, or proverb in a tap.",
+    description: "Find any word, idiom, saying, or proverb.",
   },
   {
     id: 4,
     icon: "daily",
-    title: "Word of the Day",
+    title: "Word or Proverb of the Day",
     description: "A new word and proverb daily, with a home-screen widget.",
   },
   {

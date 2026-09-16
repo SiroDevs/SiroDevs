@@ -9,7 +9,8 @@ interface PrivacyPolicyProps {
 
 export default function PrivacyPolicy({ info }: PrivacyPolicyProps) {
   return (
-    <div className="my-4 lg:my-8 mx-auto max-w-3xl">
+    <div className="container-page py-8 sm:py-12">
+    <div className="mx-auto max-w-3xl">
       <Link
         href={`/${info.slug}`}
         className="inline-flex items-center gap-1.5 font-mono text-sm text-ink-soft dark:text-cloud-soft transition-colors hover:text-brand"
@@ -125,6 +126,7 @@ export default function PrivacyPolicy({ info }: PrivacyPolicyProps) {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 }

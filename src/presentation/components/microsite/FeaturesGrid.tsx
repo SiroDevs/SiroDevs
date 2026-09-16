@@ -69,6 +69,7 @@ interface FeaturesGridProps {
   features: AppFeature[];
   glowClassName?: string;
   iconColor?: string;
+  eyebrow?: string;
   title?: string;
   subtitle?: string;
 }
@@ -77,51 +78,59 @@ export default function FeaturesGrid({
   features,
   glowClassName,
   iconColor = "#FFF",
+  eyebrow,
   title,
   subtitle,
 }: FeaturesGridProps) {
   return (
-    <div className="py-6 sm:py-10">
-      {(title || subtitle) && (
-        <div className="mb-6 text-center sm:mb-10">
+    <section className="container-page py-14 sm:py-20">
+      {(eyebrow || title || subtitle) && (
+        <div className="mb-8 max-w-xl sm:mb-10">
+          {eyebrow && <span className="eyebrow">{eyebrow}</span>}
           {title && (
-            <h2 className="font-display text-xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-2xl">
+            <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-3xl">
               {title}
             </h2>
           )}
           {subtitle && (
-            <p className="mx-auto mt-1.5 max-w-md text-sm text-ink-soft dark:text-cloud-soft">
+            <p className="mt-2 text-sm text-ink-soft dark:text-cloud-soft sm:text-base">
               {subtitle}
             </p>
           )}
         </div>
       )}
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+      <div className="-mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
         {features.map((feature, i) => {
           const Icon = resolveIcon(feature.icon);
           return (
             <motion.div
               key={feature.id}
               initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
+              className="w-[76%] shrink-0 snap-start sm:w-auto"
             >
               <GlowCard
                 identifier={`feature-${feature.id}`}
                 className={glowClassName}
               >
-                <div className="relative flex h-full flex-col gap-2 p-4 sm:p-5">
-                  <div
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/10"
-                    style={{ color: iconColor }}
-                  >
-                    <Icon size={16} strokeWidth={2} className="flex-shrink-0" />
+                <div className="relative flex h-full flex-col gap-3 p-4 sm:p-5">
+                  <div className="flex items-center gap-2.5">
+                    <div
+                      className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/10"
+                      style={{ color: iconColor }}
+                    >
+                      <Icon
+                        size={16}
+                        strokeWidth={2}
+                        className="flex-shrink-0"
+                      />
+                    </div>
+                    <p className="text-sm font-semibold leading-snug sm:text-[0.95rem]">
+                      {feature.title}
+                    </p>
                   </div>
-                  <p className="text-sm font-semibold leading-snug sm:text-[0.95rem]">
-                    {feature.title}
-                  </p>
                   <p className="text-[0.83rem] leading-relaxed opacity-80 sm:text-sm">
                     {feature.description}
                   </p>
@@ -131,6 +140,6 @@ export default function FeaturesGrid({
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,6 +1,5 @@
 export interface AppInfo {
   appName: string;
-  /** Lowercase URL segment for this app's microsite, e.g. "songlib". */
   slug: string;
   appIcon: string;
   tagline: string;
@@ -8,7 +7,7 @@ export interface AppInfo {
   description: string;
 }
 
-export interface SonglibBook {
+export interface SongLibBook {
   bookId: number;
   title: string;
   subTitle: string;
@@ -31,10 +30,9 @@ export interface PrivacyText {
 
 export interface MicrositeTheme {
   heroTexts: string[];
-  heroImage: string;
-  heroSubheading: string;
+  heroImage?: string;
   ctaGradient: string;
-  /** Short caption shown under the download button, e.g. "Android & iOS". */
+  accent: string;
   availabilityText: string;
   glowClassName: string;
   iconColor: string;
