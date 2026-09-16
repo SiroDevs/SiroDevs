@@ -21,3 +21,14 @@ export function detectDevice(): DetectedDevice {
   }
   return { platform: "other", label: "" };
 }
+
+export type StorePlatform = "android" | "ios" | "all";
+
+export function getStoreVisibility(
+  device: DetectedDevice,
+  iosUrl?: string
+): StorePlatform {
+  if (device.platform === "ios" && iosUrl) return "ios";
+  if (device.platform === "android") return "android";
+  return "all";
+}
