@@ -7,7 +7,6 @@ import { MdDownload } from "react-icons/md";
 
 import type { AppInfo } from "@/domain/entities/app-entity";
 import { useDevice } from "@/presentation/hooks/useDevice";
-import { getInstallCta } from "@/presentation/lib/device";
 
 interface HeroSectionProps {
   info: AppInfo;
@@ -42,7 +41,6 @@ export default function HeroSection({
     return () => clearInterval(interval);
   }, [texts.length, rotateIntervalMs]);
 
-  const cta = getInstallCta(device, info.appName, androidUrl, iosUrl);
   const btnClass = `group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r ${ctaGradient} px-6 py-3.5 text-sm font-semibold text-white no-underline shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.03] hover:text-white hover:no-underline active:scale-[0.98]`;
 
   return (
@@ -104,18 +102,7 @@ export default function HeroSection({
           </div>
 
           <div className="mt-7 flex flex-col items-center gap-3">
-            {cta ? (
-              <a
-                className={btnClass}
-                href={cta.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MdDownload size={18} />
-                {cta.label}
-              </a>
-            ) : (
-              <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3">
                 <a
                   href={androidUrl}
                   target="_blank"
@@ -149,7 +136,7 @@ export default function HeroSection({
                   </a>
                 )}
               </div>
-            )}
+              
             <p className="text-xs text-ink-faint dark:text-cloud-soft">
               Available on {availabilityText}
             </p>

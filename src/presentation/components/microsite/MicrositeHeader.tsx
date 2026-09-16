@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MdDownload } from "react-icons/md";
 
 import ThemeToggle from "@/presentation/theme/ThemeToggle";
 import { useDevice } from "@/presentation/hooks/useDevice";
-import { getInstallCta } from "@/presentation/lib/device";
 import type { AppInfo } from "@/domain/entities/app-entity";
 
 interface MicrositeHeaderProps {
@@ -31,8 +29,6 @@ export default function MicrositeHeader({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const cta = getInstallCta(device, info.appName, androidUrl, iosUrl);
-
   return (
     <header
       className={`sticky top-0 z-40 transition-colors duration-300 ${
@@ -54,15 +50,6 @@ export default function MicrositeHeader({
 
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
-          <a
-            href={cta ? cta.href : androidUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r ${ctaGradient} px-4 py-2 text-xs font-semibold text-white no-underline shadow-sm transition-transform duration-200 hover:scale-[1.04] hover:text-white hover:no-underline active:scale-[0.97] sm:text-sm`}
-          >
-            <MdDownload size={14} />
-            Install
-          </a>
         </div>
       </div>
     </header>
