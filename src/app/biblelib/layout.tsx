@@ -51,7 +51,7 @@ export default function BibleLibLayout({
       info={info}
       androidUrl={AppUrls.android}
       androidUrl={AppUrls.android}
-      githubUrl={AppUrls.github
+      githubUrl={AppUrls.github}
       iosUrl={AppUrls.ios}
       showFork={theme.showFork}
       ctaGradient={theme.ctaGradient}
