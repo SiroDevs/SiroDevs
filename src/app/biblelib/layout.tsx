@@ -50,9 +50,8 @@ export default function BibleLibLayout({
     <MicrositeShell
       info={info}
       androidUrl={AppUrls.android}
-      androidUrl={AppUrls.android}
-      githubUrl={AppUrls.github}
       iosUrl={AppUrls.ios}
+      githubUrl={AppUrls.github}
       showFork={theme.showFork}
       ctaGradient={theme.ctaGradient}
     >
