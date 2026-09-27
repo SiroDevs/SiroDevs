@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function BibleLibLayout({
+export default function SongLibLayout({
   children,
 }: {
   children: React.ReactNode;
