@@ -13,6 +13,7 @@ export default function BibleLibHome() {
       <HeroSection
         info={info}
         androidUrl={AppUrls.android}
+        iosUrl={AppUrls.ios}
         texts={theme.heroTexts}
         heroImage={theme.heroImage}
         ctaGradient={theme.ctaGradient}
@@ -30,6 +31,7 @@ export default function BibleLibHome() {
       <CtaBanner
         info={info}
         androidUrl={AppUrls.android}
+        iosUrl={AppUrls.ios}
         ctaGradient={theme.ctaGradient}
       />
     </div>
