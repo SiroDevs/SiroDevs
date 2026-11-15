@@ -58,15 +58,9 @@ export const roadbashContent = {
     items: [
       {
         icon: Route,
-        title: "Two tracks, three laps",
+        title: "Five tracks, for your taste",
         description:
-          "Take on The City or The Suburbs, with three laps to put distance between you and the pack.",
-      },
-      {
-        icon: Footprints,
-        title: "Keep left",
-        description:
-          "Ride on the left side of the road, just like we do in Kenya.",
+          "Take on The City, The Suburbs, Thika Road, Jungle or the Dirt Road.",
       },
       {
         icon: Gamepad2,
@@ -91,12 +85,6 @@ export const roadbashContent = {
         title: "See the bigger race",
         description:
           "Check player and visitor stats, who is online, the activity chart, or leave a suggestion.",
-      },
-      {
-        icon: Languages,
-        title: "English and Kiswahili",
-        description:
-          "Switch the game language from the Reception screen.",
       },
       {
         icon: CloudDownload,

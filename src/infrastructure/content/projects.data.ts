@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     name: "ChurchLib",
     description:
-      "A desktop library for church songs and Scripture, bringing SongLib and BibleLib together for services and study.",
+      "A desktop app for your Church Laptop or personal PC that lets you present your church songs and Bible sScripture, by bringing SongLib and BibleLib together under one app to run on Windows, Linux or MacOS.",
     tags: ["Flutter", "Desktop", "Church"],
     href: "https://churchlib.sirodevs.com",
     linkLabel: "churchlib.sirodevs.com",
@@ -21,7 +21,7 @@ export const projects: Project[] = [
   },
   {
     name: "NairobiLife",
-    description: "A Nairobi-centered online project by SiroDevs.",
+    description: "A simulation game based in Nairobi. A browser life sim of one Nairobi day. Walk the city, take matatus, work, eat, pay rent and repay your SACCO loan, and see where the money went when you sleep.",
     tags: ["Web", "Nairobi"],
     href: "https://nairobilife.fyi",
     linkLabel: "nairobilife.fyi",

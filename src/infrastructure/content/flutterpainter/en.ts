@@ -102,12 +102,6 @@ export const flutterPainterContent = {
         description:
           "Choose light or dark themes and switch between minimal and advanced layouts.",
       },
-      {
-        icon: MonitorPlay,
-        title: "Work in two languages",
-        description:
-          "Use the interface in English or Swahili on Linux, Windows, or macOS.",
-      },
     ],
   },
   workflow: {
