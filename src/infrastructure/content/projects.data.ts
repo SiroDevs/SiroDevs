@@ -11,6 +11,41 @@ export const projects: Project[] = [
     linkLabel: "View BibleLib",
   },
   {
+    name: "ChurchLib",
+    description:
+      "A desktop app for your Church Laptop or personal PC that lets you present your church songs and Bible sScripture, by bringing SongLib and BibleLib together under one app to run on Windows, Linux or MacOS.",
+    tags: ["Flutter", "Desktop", "Church"],
+    href: "https://churchlib.sirodevs.com",
+    linkLabel: "churchlib.sirodevs.com",
+    featured: true,
+  },
+  {
+    name: "NairobiLife",
+    description: "A simulation game based in Nairobi. A browser life sim of one Nairobi day. Walk the city, take matatus, work, eat, pay rent and repay your SACCO loan, and see where the money went when you sleep.",
+    tags: ["Web", "Nairobi"],
+    href: "https://nairobilife.fyi",
+    linkLabel: "nairobilife.fyi",
+    featured: true,
+  },
+  {
+    name: "RoadBash",
+    description:
+      "A pseudo-3D motorcycle racing game built with Flutter and Flame. Race through the city and suburbs, keep left on Kenyan roads, and chase your rivals.",
+    tags: ["Flutter", "Flame", "Racing Game", "Supabase"],
+    href: "/roadbash",
+    linkLabel: "Play RoadBash",
+    featured: true,
+  },
+  {
+    name: "FlutterPainter",
+    description:
+      "A desktop vector drawing app for creating artwork and exporting it as Dart code for Flutter projects.",
+    tags: ["Flutter", "Dart", "Desktop", "Vector Art"],
+    href: "/flutterpainter",
+    linkLabel: "View FlutterPainter",
+    featured: true,
+  },
+  {
     name: "Mwalimu AI",
     period: "April 2026 - Present",
     description:

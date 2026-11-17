@@ -1,6 +1,6 @@
 export interface Project {
   name: string;
-  period: string;
+  period?: string;
   description: string;
   tags: string[];
   href: string;

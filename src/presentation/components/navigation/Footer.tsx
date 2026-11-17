@@ -1,8 +1,9 @@
-import { Github, Linkedin, X, BookOpen, Smartphone, Apple } from "lucide-react";
+import { Github, Linkedin, BookOpen, Smartphone, Apple } from "lucide-react";
+import { SiX } from "react-icons/si";
 import { site, mylinks } from "@/config/site";
 
 const links = [
-  { label: "X", href: mylinks.x, icon: X },
+  { label: "X", href: mylinks.x, icon: SiX },
   { label: "LinkedIn", href: mylinks.linkedin, icon: Linkedin },
   { label: "GitHub", href: mylinks.github, icon: Github },
   { label: "Tech Blog", href: mylinks.techblog, icon: BookOpen },

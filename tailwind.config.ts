@@ -30,6 +30,15 @@ const config: Config = {
           DEFAULT: "#F3EFE7",
           soft: "#B6AFA2",
         },
+        oxblood: "#7A3430",
+        gold: "#C48A35",
+        umber: "#1D1917",
+        ember: { deep: "#BF4309" },
+        flutter: {
+          DEFAULT: "#02569B",
+          dark: "#014478",
+          light: "#54C5F8",
+        },
         primary: "#331900",
       },
       fontFamily: {
