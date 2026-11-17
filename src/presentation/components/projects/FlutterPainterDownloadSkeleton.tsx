@@ -6,7 +6,7 @@ export default function FlutterPainterDownloadSkeleton() {
   return (
     <section
       id="download"
-      className="bg-oxblood py-24 text-white lg:py-28"
+      className="bg-flutter-dark py-24 text-white lg:py-28"
       aria-busy="true"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">

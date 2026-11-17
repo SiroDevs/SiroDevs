@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { projectAccentStyles, type ProjectAccent } from "./project-accent";
 
 export interface ProjectFaqItem {
   question: string;
@@ -10,6 +11,7 @@ interface ProjectFaqProps {
   title: string;
   description?: string;
   items: ProjectFaqItem[];
+  accent?: ProjectAccent;
 }
 
 export default function ProjectFaq({
@@ -17,7 +19,10 @@ export default function ProjectFaq({
   title,
   description,
   items,
+  accent = "brand",
 }: ProjectFaqProps) {
+  const accentStyles = projectAccentStyles[accent];
+
   return (
     <section id={id} className="container-page scroll-mt-24 py-14 sm:py-20">
       <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
@@ -41,7 +46,7 @@ export default function ProjectFaq({
                 {item.question}
                 <ChevronDown
                   size={18}
-                  className="shrink-0 text-brand transition-transform group-open:rotate-180"
+                  className={`shrink-0 transition-transform group-open:rotate-180 ${accentStyles.text}`}
                   aria-hidden
                 />
               </summary>

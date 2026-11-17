@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import { projectAccentStyles, type ProjectAccent } from "./project-accent";
 
 export interface ProjectFeature {
   icon: LucideIcon;
@@ -12,6 +13,7 @@ interface ProjectFeatureGridProps {
   title: string;
   description?: string;
   features: ProjectFeature[];
+  accent?: ProjectAccent;
 }
 
 export default function ProjectFeatureGrid({
@@ -20,7 +22,10 @@ export default function ProjectFeatureGrid({
   title,
   description,
   features,
+  accent = "brand",
 }: ProjectFeatureGridProps) {
+  const accentStyles = projectAccentStyles[accent];
+
   return (
     <section id={id} className="container-page scroll-mt-24 py-14 sm:py-20">
       <div className="max-w-2xl">
@@ -40,7 +45,7 @@ export default function ProjectFeatureGrid({
             key={featureTitle}
             className="border-t border-paper-line py-5 dark:border-night-line"
           >
-            <Icon size={22} strokeWidth={1.8} className="text-brand" aria-hidden />
+            <Icon size={22} strokeWidth={1.8} className={accentStyles.text} aria-hidden />
             <h3 className="mt-4 font-display text-lg font-semibold text-ink dark:text-cloud">
               {featureTitle}
             </h3>

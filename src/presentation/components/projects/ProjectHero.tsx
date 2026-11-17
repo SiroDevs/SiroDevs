@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import type { ReactNode } from "react";
+import { projectAccentStyles, type ProjectAccent } from "./project-accent";
 
 interface ProjectAction {
   label: string;
@@ -14,6 +16,8 @@ interface ProjectHeroProps {
   note?: string;
   image?: string;
   imageAlt?: string;
+  brandIcon?: ReactNode;
+  accent?: ProjectAccent;
   primaryAction: ProjectAction;
   secondaryAction: ProjectAction;
 }
@@ -25,9 +29,13 @@ export default function ProjectHero({
   note,
   image,
   imageAlt,
+  brandIcon,
+  accent = "brand",
   primaryAction,
   secondaryAction,
 }: ProjectHeroProps) {
+  const accentStyles = projectAccentStyles[accent];
+
   return (
     <section
       className={`container-page grid items-center gap-10 py-14 sm:py-20 lg:gap-12 lg:py-24 ${
@@ -35,6 +43,13 @@ export default function ProjectHero({
       }`}
     >
       <div className={image ? "" : "mx-auto max-w-4xl"}>
+        {brandIcon && (
+          <div className={`mb-5 flex ${image ? "justify-start" : "justify-center"}`}>
+            <span className={`inline-flex size-16 items-center justify-center rounded-2xl border ${accentStyles.iconSurface}`}>
+              {brandIcon}
+            </span>
+          </div>
+        )}
         <p className="eyebrow">{eyebrow}</p>
         <h1 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-ink dark:text-cloud sm:text-5xl lg:text-6xl">
           {title}
@@ -64,7 +79,7 @@ export default function ProjectHero({
               target: "_blank",
               rel: "noopener noreferrer",
             })}
-            className="inline-flex items-center gap-2 rounded-lg border border-brand bg-brand px-5 py-3 font-mono text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+            className={`inline-flex items-center gap-2 rounded-lg px-5 py-3 font-mono text-sm font-semibold text-white transition-colors ${accentStyles.action}`}
           >
             {primaryAction.label}
             {primaryAction.external ? (
@@ -79,7 +94,7 @@ export default function ProjectHero({
               target: "_blank",
               rel: "noopener noreferrer",
             })}
-            className="inline-flex items-center rounded-lg border border-ink/20 px-5 py-3 font-mono text-sm text-ink transition-colors hover:border-brand hover:text-brand dark:border-cloud/20 dark:text-cloud"
+            className={`inline-flex items-center rounded-lg border border-ink/20 px-5 py-3 font-mono text-sm text-ink transition-colors dark:border-cloud/20 dark:text-cloud ${accentStyles.hoverBorder} ${accentStyles.hoverText}`}
           >
             {secondaryAction.label}
           </a>

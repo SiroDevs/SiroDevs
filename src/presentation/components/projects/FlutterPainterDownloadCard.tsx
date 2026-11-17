@@ -84,12 +84,12 @@ function DownloadButton({
     <a
       href={file.url}
       title={file.name}
-      className={`flex h-[3.4rem] items-center justify-center rounded-lg border font-semibold text-white transition-colors ${
+      className={`flex h-[3.4rem] items-center justify-center rounded-lg border font-semibold transition-colors ${
         compact ? "gap-2 whitespace-nowrap px-2.5 text-[0.9rem]" : "gap-2.5 px-4 text-base"
       } ${
         highlighted
-          ? "border-transparent bg-ember-deep hover:bg-[#a63a07]"
-          : "border-white/15 bg-white/[0.07] hover:bg-white/[0.13]"
+          ? "border-transparent bg-flutter-light text-[#082338] hover:bg-[#35b4f3]"
+          : "border-white/15 bg-white/[0.07] text-white hover:bg-white/[0.13]"
       }`}
     >
       {label}
@@ -178,7 +178,7 @@ export default function FlutterPainterDownloadCard({
       aria-label={`${title} downloads`}
       className={`flex min-w-0 flex-col rounded-2xl border p-7 transition-[border-color,box-shadow,background-color] duration-300 ${
         recommended
-          ? "border-gold/70 bg-white/[0.07] shadow-[0_0_70px_-18px_rgba(196,138,53,0.6)]"
+          ? "border-flutter-light/70 bg-white/[0.07] shadow-[0_0_70px_-18px_rgba(84,197,248,0.55)]"
           : "border-white/10 bg-black/20"
       }`}
     >
@@ -188,7 +188,7 @@ export default function FlutterPainterDownloadCard({
           {title}
         </h3>
         {recommended && (
-          <span className="rounded-full bg-gold px-3.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-umber">
+          <span className="rounded-full bg-flutter-light px-3.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-umber">
             {labels.recommended}
           </span>
         )}

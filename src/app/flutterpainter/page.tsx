@@ -8,13 +8,18 @@ import ProjectLandingShell from "@/presentation/components/projects/ProjectLandi
 import ProjectScreenshotGallery from "@/presentation/components/projects/ProjectScreenshotGallery";
 import ProjectSteps from "@/presentation/components/projects/ProjectSteps";
 import { flutterPainterContent } from "@/infrastructure/content/flutterpainter/en";
+import { SiFlutter } from "react-icons/si";
 
 export default function FlutterPainterPage() {
   const content = flutterPainterContent;
 
   return (
-    <ProjectLandingShell navigation={content.navigation}>
-      <ProjectHero {...content.hero} />
+    <ProjectLandingShell navigation={content.navigation} accent="flutter">
+      <ProjectHero
+        {...content.hero}
+        accent="flutter"
+        brandIcon={<SiFlutter className="size-9" aria-hidden />}
+      />
       <ProjectScreenshotGallery
         id="screenshots"
         title={content.screenshots.title}
@@ -26,18 +31,21 @@ export default function FlutterPainterPage() {
         title={content.features.title}
         description={content.features.description}
         features={content.features.items}
+        accent="flutter"
       />
       <ProjectSteps
         id="workflow"
         title={content.workflow.title}
         description={content.workflow.description}
         steps={content.workflow.steps}
+        accent="flutter"
       />
       <ProjectFaq
         id="faq"
         title={content.faq.title}
         description={content.faq.description}
         items={content.faq.items}
+        accent="flutter"
       />
       <Suspense fallback={<FlutterPainterDownloadSkeleton />}>
         <FlutterPainterDownloadSection />

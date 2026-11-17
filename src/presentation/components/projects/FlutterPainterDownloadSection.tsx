@@ -10,7 +10,7 @@ export default async function FlutterPainterDownloadSection() {
   return (
     <section
       id="download"
-      className="scroll-mt-20 bg-oxblood py-24 text-white lg:py-28"
+      className="scroll-mt-20 bg-flutter-dark py-24 text-white lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-14 text-center">

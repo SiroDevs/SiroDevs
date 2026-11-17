@@ -1,3 +1,5 @@
+import { projectAccentStyles, type ProjectAccent } from "./project-accent";
+
 export interface ProjectStep {
   title: string;
   description: string;
@@ -8,6 +10,7 @@ interface ProjectStepsProps {
   title: string;
   description?: string;
   steps: ProjectStep[];
+  accent?: ProjectAccent;
 }
 
 export default function ProjectSteps({
@@ -15,7 +18,10 @@ export default function ProjectSteps({
   title,
   description,
   steps,
+  accent = "brand",
 }: ProjectStepsProps) {
+  const accentStyles = projectAccentStyles[accent];
+
   return (
     <section id={id} className="scroll-mt-24 border-y border-paper-line bg-paper-raised py-14 dark:border-night-line dark:bg-night-raised sm:py-20">
       <div className="container-page">
@@ -35,7 +41,7 @@ export default function ProjectSteps({
               key={step.title}
               className="border-t border-paper-line pt-4 dark:border-night-line"
             >
-              <span className="font-mono text-xs text-brand">
+              <span className={`font-mono text-xs ${accentStyles.text}`}>
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-2 font-display text-lg font-semibold text-ink dark:text-cloud">

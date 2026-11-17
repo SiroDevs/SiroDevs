@@ -43,6 +43,10 @@ body {
   @apply text-ink-faint dark:text-cloud-soft opacity-70;
 }
 
+.flutter-painter-theme .eyebrow {
+  color: #02569b;
+}
+
 .container-page {
   @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
 }

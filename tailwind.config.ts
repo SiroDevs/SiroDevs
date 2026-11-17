@@ -34,6 +34,11 @@ const config: Config = {
         gold: "#C48A35",
         umber: "#1D1917",
         ember: { deep: "#BF4309" },
+        flutter: {
+          DEFAULT: "#02569B",
+          dark: "#014478",
+          light: "#54C5F8",
+        },
         primary: "#331900",
       },
       fontFamily: {
