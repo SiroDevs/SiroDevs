@@ -28,6 +28,15 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "RoadBash",
+    description:
+      "A pseudo-3D motorcycle racing game built with Flutter and Flame. Race through the city and suburbs, keep left on Kenyan roads, and chase your rivals.",
+    tags: ["Flutter", "Flame", "Racing Game", "Supabase"],
+    href: "/roadbash",
+    linkLabel: "Play RoadBash",
+    featured: true,
+  },
+  {
     name: "Mwalimu AI",
     period: "April 2026 - Present",
     description:
