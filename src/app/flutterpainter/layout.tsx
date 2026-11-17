@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     images: [
       {
-        url: "/flutterpainter/editor.webp",
+        url: "/flutterpainter/editor.png",
         alt: "FlutterPainter drawing workspace",
       },
     ],

@@ -45,12 +45,12 @@ export const flutterPainterContent = {
     items: [
       {
         title: "The drawing workspace",
-        image: "/flutterpainter/editor.webp",
+        image: "/flutterpainter/editor.png",
         alt: "FlutterPainter workspace with a rider illustration, shape tools, colour controls, and layers",
       },
       {
         title: "Dart code export",
-        image: "/flutterpainter/dart-export.webp",
+        image: "/flutterpainter/dart-export.png",
         alt: "FlutterPainter code editor showing generated Dart painter and layer files",
       },
     ],
