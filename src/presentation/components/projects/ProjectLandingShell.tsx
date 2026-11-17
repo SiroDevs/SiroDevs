@@ -45,7 +45,7 @@ export default function ProjectLandingShell({
                   target: "_blank",
                   rel: "noopener noreferrer",
                 })}
-                className="border border-brand bg-brand px-3 py-2 font-mono text-xs font-semibold text-white transition-colors hover:bg-brand-dark sm:px-4 sm:text-sm"
+                className="rounded-lg border border-brand bg-brand px-3 py-2 font-mono text-xs font-semibold text-white transition-colors hover:bg-brand-dark sm:px-4 sm:text-sm"
               >
                 {navigation.action.label}
               </a>

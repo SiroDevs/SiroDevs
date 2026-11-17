@@ -64,7 +64,7 @@ export default function ProjectHero({
               target: "_blank",
               rel: "noopener noreferrer",
             })}
-            className="inline-flex items-center gap-2 border border-brand bg-brand px-5 py-3 font-mono text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+            className="inline-flex items-center gap-2 rounded-lg border border-brand bg-brand px-5 py-3 font-mono text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
           >
             {primaryAction.label}
             {primaryAction.external ? (
@@ -79,20 +79,20 @@ export default function ProjectHero({
               target: "_blank",
               rel: "noopener noreferrer",
             })}
-            className="inline-flex items-center border border-ink/20 px-5 py-3 font-mono text-sm text-ink transition-colors hover:border-brand hover:text-brand dark:border-cloud/20 dark:text-cloud"
+            className="inline-flex items-center rounded-lg border border-ink/20 px-5 py-3 font-mono text-sm text-ink transition-colors hover:border-brand hover:text-brand dark:border-cloud/20 dark:text-cloud"
           >
             {secondaryAction.label}
           </a>
         </div>
       </div>
       {image && imageAlt && (
-        <div className="relative aspect-[16/10] border border-paper-line bg-night dark:border-night-line">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-paper-line bg-night dark:border-night-line">
           <Image
             src={image}
             alt={imageAlt}
             fill
             sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-contain"
+            className="rounded-xl object-contain"
             priority
           />
         </div>

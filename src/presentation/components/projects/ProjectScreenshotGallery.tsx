@@ -35,14 +35,14 @@ export default function ProjectScreenshotGallery({
         <div className="mt-9 grid gap-5 lg:grid-cols-2">
           {screenshots.map((screenshot, index) => (
             <figure key={screenshot.title}>
-              <div className="relative aspect-video border border-paper-line bg-night dark:border-night-line">
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-paper-line bg-night dark:border-night-line">
                 <Image
                   src={screenshot.image}
                   alt={screenshot.alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   loading={index === 0 ? "eager" : "lazy"}
-                  className="object-contain"
+                  className="rounded-xl object-contain"
                 />
               </div>
               <figcaption className="mt-3 font-mono text-xs text-ink-faint dark:text-cloud-soft">

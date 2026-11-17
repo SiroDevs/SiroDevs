@@ -29,7 +29,7 @@ export default function ProjectBottomCta({
         <a
           href={href}
           {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-          className="inline-flex shrink-0 items-center justify-center gap-2 border border-brand bg-brand px-5 py-3 font-mono text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-brand bg-brand px-5 py-3 font-mono text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
         >
           {label}
           <ArrowUpRight size={16} aria-hidden />

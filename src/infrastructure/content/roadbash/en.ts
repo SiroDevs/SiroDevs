@@ -21,8 +21,8 @@ export const roadbashContent = {
     description:
       "A pseudo-3D motorcycle racer inspired by the 1991 classic Road Rash. Ride through city streets and the suburbs, keep left like we do in Kenya, and race for the line.",
     note: "Work in progress: controls and interface are still being polished.",
-    image: "/roadbash/race.webp",
-    imageAlt: "Road Bash race menu showing a rider on a city road at sunset",
+    image: "/roadbash/roadbash1.webp",
+    imageAlt: "Road Bash scene selection showing The City, a rider, and the Start Ride action",
     primaryAction: {
       label: "PLAY NOW ONLINE",
       href: "https://roadbash.sirodevs.com",
@@ -34,19 +34,19 @@ export const roadbashContent = {
     },
   },
   screenshots: {
-    title: "The race is only part of the story.",
+    title: "Get into the race.",
     description:
-      "Check the leaderboard, follow player activity, and see how your races add up.",
+      "Ride through the city streets, line up beside your rivals, and get off the line cleanly.",
     items: [
       {
-        title: "Leaderboard",
-        image: "/roadbash/leaderboard.webp",
-        alt: "Road Bash leaderboard with player names, games played, and wins",
+        title: "City race",
+        image: "/roadbash/roadbash2.webp",
+        alt: "First-person city race with rival riders, traffic, speed dials, pedals, and the item bar",
       },
       {
-        title: "Player and race stats",
-        image: "/roadbash/stats.webp",
-        alt: "Road Bash stats showing visitors, players, games, and activity charts",
+        title: "Race start",
+        image: "/roadbash/roadbash3.webp",
+        alt: "Road Bash start countdown with riders on a straight road and on-screen gas pedals",
       },
     ],
   },
