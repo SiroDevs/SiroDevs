@@ -4,8 +4,6 @@ import "./globals.css";
 import ThemeProvider from "@/presentation/theme/ThemeProvider";
 import { site } from "@/config/site";
 
-const mono = { variable: "--font-mono", className: "" };
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: `${site.name} [${site.brand}] — ${site.role}`,
@@ -61,7 +59,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${mono.variable} bg-grain`}>
+      <body className="bg-grain">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

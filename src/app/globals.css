@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "Trebuchet MS", "Lucida Grande", Verdana, sans-serif;
-  --font-body: "Trebuchet MS", "Lucida Grande", Verdana, sans-serif;
+  --font-site: "Trebuchet MS", "Lucida Grande", Verdana, sans-serif;
+  --font-display: var(--font-site);
+  --font-body: var(--font-site);
+  --font-mono: var(--font-site);
 }
 
 html {
