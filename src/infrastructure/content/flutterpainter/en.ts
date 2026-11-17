@@ -11,9 +11,9 @@ import {
 
 export const flutterPainterContent = {
   metadata: {
-    title: "FlutterPainter | Siro Devs",
+    title: "FlutterPainter — Vector Drawing for Flutter | SiroDevs",
     description:
-      "A desktop vector drawing app for making artwork and exporting it as Dart code. Draw with shapes and paths, organize layers, and create a reusable painter for Flutter.",
+      "FlutterPainter is a desktop vector drawing app that exports artwork as Flutter-ready Dart code. Draw with shapes and paths, organize layers, and create custom painters for Flutter projects.",
   },
   navigation: {
     links: [
@@ -26,7 +26,7 @@ export const flutterPainterContent = {
   },
   hero: {
     eyebrow: "A desktop drawing app for Flutter",
-    title: "Draw artwork. Export it as Dart.",
+    title: "FlutterPainter: Draw artwork. Export it as Dart.",
     description:
       "FlutterPainter is a vector drawing app for making artwork and exporting it as Flutter-ready Dart code. Draw with shapes and paths, arrange the work on layers, then use the generated painter in your project.",
     primaryAction: {

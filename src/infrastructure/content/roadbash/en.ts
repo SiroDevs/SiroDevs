@@ -11,13 +11,13 @@ import {
 
 export const roadbashContent = {
   metadata: {
-    title: "Road Bash | Siro Devs",
+    title: "RoadBash — Online Motorcycle Racing Game | SiroDevs",
     description:
-      "Play Road Bash, a pseudo-3D motorcycle racing game built with Flutter and Flame. Race through the city and suburbs, keeping left on Kenyan roads.",
+      "RoadBash is an online motorcycle racing game inspired by Road Rash. Race city and suburban tracks, compete against rivals, and keep left on Kenyan roads.",
   },
   hero: {
     eyebrow: "Flutter · Flame · racing game",
-    title: "Keep left. Hold your line. Beat your rivals.",
+    title: "RoadBash: Keep left. Beat your rivals.",
     description:
       "A pseudo-3D motorcycle racer inspired by the 1991 classic Road Rash. Ride through city streets and the suburbs, keep left like we do in Kenya, and race for the line.",
     note: "Work in progress: controls and interface are still being polished.",

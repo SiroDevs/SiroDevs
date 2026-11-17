@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/config/site";
 
 const apps = ["songlib", "swahilib", "youplot", "biblelib"];
+const projectPages = ["roadbash", "flutterpainter"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -27,5 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.3,
       },
     ]),
+    ...projectPages.map((slug) => ({
+      url: `${site.url}/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
   ];
 }
