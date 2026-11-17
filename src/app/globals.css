@@ -45,6 +45,27 @@ body {
   @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
 }
 
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(138 131 120 / 22%);
+}
+
+.skeleton-shimmer::after {
+  position: absolute;
+  inset: 0 auto 0 -40%;
+  width: 35%;
+  content: "";
+  background-color: rgb(255 255 255 / 16%);
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  to {
+    transform: translateX(420%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

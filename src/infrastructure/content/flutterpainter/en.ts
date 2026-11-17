@@ -9,8 +9,6 @@ import {
   PenLine,
 } from "lucide-react";
 
-const releasesUrl = "https://github.com/SiroDevs/FlutterPainter/releases/latest";
-
 export const flutterPainterContent = {
   metadata: {
     title: "FlutterPainter | Siro Devs",
@@ -22,8 +20,9 @@ export const flutterPainterContent = {
       { href: "#screenshots", label: "The editor" },
       { href: "#features", label: "Features" },
       { href: "#workflow", label: "How it works" },
+      { href: "#faq", label: "FAQ" },
     ],
-    action: { href: releasesUrl, label: "Download", external: true },
+    action: { href: "#download", label: "Download" },
   },
   hero: {
     eyebrow: "A desktop drawing app for Flutter",
@@ -32,8 +31,7 @@ export const flutterPainterContent = {
       "FlutterPainter is a vector drawing app for making artwork and exporting it as Flutter-ready Dart code. Draw with shapes and paths, arrange the work on layers, then use the generated painter in your project.",
     primaryAction: {
       label: "DOWNLOAD FLUTTERPAINTER",
-      href: releasesUrl,
-      external: true,
+      href: "#download",
     },
     secondaryAction: {
       label: "Explore the features",
@@ -134,11 +132,61 @@ export const flutterPainterContent = {
       },
     ],
   },
-  closing: {
-    title: "Ready to make your next Flutter illustration?",
+  faq: {
+    title: "Questions before you download?",
+    description: "A few details about the desktop app and its Dart exports.",
+    items: [
+      {
+        question: "Which operating systems are supported?",
+        answer:
+          "FlutterPainter has desktop releases for Windows x64, macOS for Intel and Apple Silicon, and Linux for x64 and ARM64.",
+      },
+      {
+        question: "Do I need Flutter installed to draw?",
+        answer:
+          "No. FlutterPainter runs as a desktop drawing app. You use Flutter when you add the exported Dart painter to your own Flutter project.",
+      },
+      {
+        question: "What does the Dart export include?",
+        answer:
+          "Export either a refactored set of Dart files for the painter and its layers, or one monolithic Dart file. Both use dart:ui.",
+      },
+      {
+        question: "Does the export include animation?",
+        answer:
+          "The export describes static artwork. Add animation, rotation, or other runtime transforms around the painter in your Flutter app.",
+      },
+    ],
+  },
+  download: {
+    eyebrow: "Downloads",
+    title: "Get FlutterPainter for your desktop.",
     description:
-      "Download the latest release for Linux, Windows, or macOS from GitHub.",
-    label: "DOWNLOAD FLUTTERPAINTER",
-    href: releasesUrl,
+      "Choose a build for Windows, macOS, or Linux. Packages are available for the supported desktop architectures.",
+    labels: {
+      recommended: "Your OS",
+      otherDownloads: "Other downloads",
+      selectPackage: "Select a package",
+      windowsTitle: "Windows",
+      windowsDescription: "64-bit installer, with a portable ZIP under other downloads.",
+      macosTitle: "macOS",
+      macosDescription: "Choose the disk image for Apple Silicon or Intel.",
+      appleSilicon: "Apple Silicon",
+      intelMac: "Intel Mac",
+      linuxTitle: "Linux",
+      linuxDescription: "DEB and RPM installers, with tarballs and ARM64 builds under other downloads.",
+      formats: {
+        installer: "Installer",
+        portable: "Portable ZIP",
+        dmg: "DMG",
+        deb: "DEB package",
+        rpm: "RPM package",
+        tarball: "Tarball",
+      },
+      architecture: { x64: "x64", arm64: "ARM64" },
+      releaseNotes: "Release notes",
+      checksums: "SHA256 checksums",
+      version: "Version",
+    },
   },
 };

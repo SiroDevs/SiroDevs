@@ -1,5 +1,8 @@
-import ProjectBottomCta from "@/presentation/components/projects/ProjectBottomCta";
+import { Suspense } from "react";
 import ProjectFeatureGrid from "@/presentation/components/projects/ProjectFeatureGrid";
+import FlutterPainterDownloadSection from "@/presentation/components/projects/FlutterPainterDownloadSection";
+import FlutterPainterDownloadSkeleton from "@/presentation/components/projects/FlutterPainterDownloadSkeleton";
+import ProjectFaq from "@/presentation/components/projects/ProjectFaq";
 import ProjectHero from "@/presentation/components/projects/ProjectHero";
 import ProjectLandingShell from "@/presentation/components/projects/ProjectLandingShell";
 import ProjectScreenshotGallery from "@/presentation/components/projects/ProjectScreenshotGallery";
@@ -30,13 +33,15 @@ export default function FlutterPainterPage() {
         description={content.workflow.description}
         steps={content.workflow.steps}
       />
-      <ProjectBottomCta
-        title={content.closing.title}
-        description={content.closing.description}
-        label={content.closing.label}
-        href={content.closing.href}
-        external
+      <ProjectFaq
+        id="faq"
+        title={content.faq.title}
+        description={content.faq.description}
+        items={content.faq.items}
       />
+      <Suspense fallback={<FlutterPainterDownloadSkeleton />}>
+        <FlutterPainterDownloadSection />
+      </Suspense>
     </ProjectLandingShell>
   );
 }
