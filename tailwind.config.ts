@@ -30,6 +30,10 @@ const config: Config = {
           DEFAULT: "#F3EFE7",
           soft: "#B6AFA2",
         },
+        oxblood: "#7A3430",
+        gold: "#C48A35",
+        umber: "#1D1917",
+        ember: { deep: "#BF4309" },
         primary: "#331900",
       },
       fontFamily: {
