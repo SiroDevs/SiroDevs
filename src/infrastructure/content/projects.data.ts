@@ -37,6 +37,15 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "FlutterPainter",
+    description:
+      "A desktop vector drawing app for creating artwork and exporting it as Dart code for Flutter projects.",
+    tags: ["Flutter", "Dart", "Desktop", "Vector Art"],
+    href: "/flutterpainter",
+    linkLabel: "View FlutterPainter",
+    featured: true,
+  },
+  {
     name: "Mwalimu AI",
     period: "April 2026 - Present",
     description:

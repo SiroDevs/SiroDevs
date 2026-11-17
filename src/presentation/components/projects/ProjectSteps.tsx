@@ -4,18 +4,20 @@ export interface ProjectStep {
 }
 
 interface ProjectStepsProps {
+  id?: string;
   title: string;
   description?: string;
   steps: ProjectStep[];
 }
 
 export default function ProjectSteps({
+  id,
   title,
   description,
   steps,
 }: ProjectStepsProps) {
   return (
-    <section className="border-y border-paper-line bg-paper-raised py-14 dark:border-night-line dark:bg-night-raised sm:py-20">
+    <section id={id} className="scroll-mt-24 border-y border-paper-line bg-paper-raised py-14 dark:border-night-line dark:bg-night-raised sm:py-20">
       <div className="container-page">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold tracking-tight text-ink dark:text-cloud sm:text-4xl">
