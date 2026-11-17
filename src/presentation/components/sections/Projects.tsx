@@ -17,7 +17,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-4">
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {featuredProjects.map((p) => {
           const isInternal = p.href.startsWith("/");
           return (
@@ -37,9 +37,11 @@ export default function Projects() {
                   className="mt-1 shrink-0 text-ink-faint transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand"
                 />
               </div>
-              <p className="mt-1 font-mono text-xs text-ink-faint dark:text-cloud-soft">
-                {p.period}
-              </p>
+              {p.period && (
+                <p className="mt-1 font-mono text-xs text-ink-faint dark:text-cloud-soft">
+                  {p.period}
+                </p>
+              )}
               <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-soft dark:text-cloud-soft">
                 {p.description}
               </p>

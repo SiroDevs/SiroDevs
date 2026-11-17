@@ -11,6 +11,23 @@ export const projects: Project[] = [
     linkLabel: "View BibleLib",
   },
   {
+    name: "ChurchLib",
+    description:
+      "A desktop library for church songs and Scripture, bringing SongLib and BibleLib together for services and study.",
+    tags: ["Flutter", "Desktop", "Church"],
+    href: "https://churchlib.sirodevs.com",
+    linkLabel: "churchlib.sirodevs.com",
+    featured: true,
+  },
+  {
+    name: "NairobiLife",
+    description: "A Nairobi-centered online project by SiroDevs.",
+    tags: ["Web", "Nairobi"],
+    href: "https://nairobilife.fyi",
+    linkLabel: "nairobilife.fyi",
+    featured: true,
+  },
+  {
     name: "Mwalimu AI",
     period: "April 2026 - Present",
     description:
