@@ -1,5 +1,6 @@
 import {
   Bookmark,
+  Box,
   CloudDownload,
   History,
   Layers,
@@ -12,29 +13,28 @@ export const flutterPainterContent = {
   metadata: {
     title: "FlutterPainter — Vector Drawing for Flutter | SiroDevs",
     description:
-      "FlutterPainter is a desktop vector drawing app built with Flutter that exports artwork as Flutter-ready Dart code. Draw with shapes and paths, organize layers, and create custom painters for Flutter projects.",
+      "FlutterPainter is a desktop vector drawing app for creating editable artwork, turning layered shapes into 3D objects, and exporting Flutter-ready Dart code.",
   },
   navigation: {
     links: [
-      { href: "#screenshots", label: "The editor" },
-      { href: "#features", label: "Features" },
-      { href: "#workflow", label: "How it works" },
-      { href: "#faq", label: "FAQ" },
+      { href: "/flutterpainter#screenshots", label: "The editor" },
+      { href: "/flutterpainter#features", label: "Features" },
+      { href: "/flutterpainter/how-it-works", label: "How it works" },
     ],
-    action: { href: "#download", label: "Download" },
+    action: { href: "/flutterpainter#download", label: "Download" },
   },
   hero: {
     eyebrow: "A desktop drawing app for Flutter",
     title: "FlutterPainter: Draw artwork. Export it as Dart.",
     description:
-      "FlutterPainter is a vector drawing app for making artwork and exporting it as Flutter-ready Dart code. Draw with shapes and paths, arrange the work on layers, then use the generated painter in your project.",
+      "Draw editable artwork, turn layered shapes into 3D objects, and export the result as Flutter-ready Dart code.",
     primaryAction: {
       label: "DOWNLOAD FLUTTERPAINTER",
       href: "#download",
     },
     secondaryAction: {
-      label: "Explore the features",
-      href: "#features",
+      label: "How it works",
+      href: "/flutterpainter/how-it-works",
     },
   },
   screenshots: {
@@ -78,6 +78,12 @@ export const flutterPainterContent = {
           "Use layers and an expandable item tree to arrange drawings, groups, and their parts.",
       },
       {
+        icon: Box,
+        title: "Create 3D objects",
+        description:
+          "Convert a layer into a 3D model, then adjust each shape’s thickness and depth.",
+      },
+      {
         icon: Bookmark,
         title: "Trace with reference images",
         description:
@@ -100,54 +106,6 @@ export const flutterPainterContent = {
         title: "Make the workspace yours",
         description:
           "Choose light or dark themes and switch between minimal and advanced layouts.",
-      },
-    ],
-  },
-  workflow: {
-    title: "Make it, arrange it, use it in Flutter.",
-    description:
-      "The canvas uses a design box, and its coordinates become the drawing's Dart coordinates.",
-    steps: [
-      {
-        title: "Create the artwork",
-        description:
-          "Draw shapes and paths on the canvas, or trace over a reference image.",
-      },
-      {
-        title: "Arrange the design",
-        description:
-          "Group and name items, organize layers, and save the project as an editable .flp file.",
-      },
-      {
-        title: "Export a painter",
-        description:
-          "Choose structured Dart files or one file, then call the generated painter from your Flutter app.",
-      },
-    ],
-  },
-  faq: {
-    title: "Questions before you download?",
-    description: "A few details about the desktop app and its Dart exports.",
-    items: [
-      {
-        question: "Which operating systems are supported?",
-        answer:
-          "FlutterPainter has desktop releases for Windows x64, macOS for Intel and Apple Silicon, and Linux for x64 and ARM64.",
-      },
-      {
-        question: "Do I need Flutter installed to draw?",
-        answer:
-          "No. FlutterPainter runs as a desktop drawing app. You use Flutter when you add the exported Dart painter to your own Flutter project.",
-      },
-      {
-        question: "What does the Dart export include?",
-        answer:
-          "Export either a refactored set of Dart files for the painter and its layers, or one monolithic Dart file. Both use dart:ui.",
-      },
-      {
-        question: "Does the export include animation?",
-        answer:
-          "The export describes static artwork. Add animation, rotation, or other runtime transforms around the painter in your Flutter app.",
       },
     ],
   },
