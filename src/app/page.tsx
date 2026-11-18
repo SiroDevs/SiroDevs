@@ -5,7 +5,6 @@ import Hero from "@/presentation/components/sections/Hero";
 import About from "@/presentation/components/sections/About";
 import WorkExperience from "@/presentation/components/sections/WorkExperience";
 import Projects from "@/presentation/components/sections/Projects";
-import Blog from "@/presentation/components/sections/Blog";
 import Contact from "@/presentation/components/sections/Contact";
 import { site, mylinks } from "@/config/site";
 

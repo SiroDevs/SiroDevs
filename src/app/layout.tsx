@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "Flutter Developer Kenya",
     "Android Developer",
     "iOS Developer",
+    "Project Manager",
     "React Developer",
     "Mobile App Developer Kenya",
   ],
