@@ -2,13 +2,30 @@ import type { Project } from "@/domain/entities/project";
 
 export const projects: Project[] = [
   {
-    name: "BibleLib",
-    period: "Aug 2025 - Present",
+    name: "FlutterPainter",
     description:
-      "A clean, offline-first Bible reader built for focused study. Explore a number of translations side by side, search instantly, personalize your reading experience, and keep everything organized with bookmarks, notes, reading history, and reusable scripture lists for sermons, studies, or personal devotions.",
-    tags: ["Kotlin", "Jetpack Compose", "Bible"],
-    href: "/biblelib",
-    linkLabel: "View BibleLib",
+      "A desktop vector drawing app built with Flutter for creating artwork and exporting it as Dart code for Flutter projects.",
+    tags: ["Flutter", "Dart", "Desktop", "Vector Art"],
+    href: "/flutterpainter",
+    linkLabel: "Learn more on FlutterPainter",
+    featured: true,
+  },
+  {
+    name: "RoadBash",
+    description:
+      "A pseudo-3D motorcycle racing game built with Flutter and Flame. Race through the city and suburbs, keep left on Kenyan roads, and chase your rivals.",
+    tags: ["Flutter", "Flame", "Racing Game", "Supabase"],
+    href: "/roadbash",
+    linkLabel: "Learn more on RoadBash",
+    featured: true,
+  },
+  {
+    name: "NairobiLife",
+    description: "A simulation game based in Nairobi built with NextJs. A browser life sim of one Nairobi day. Walk the city, take matatus, work, eat, pay rent and repay your SACCO loan, and see where the money went when you sleep.",
+    tags: ["Web", "Nairobi"],
+    href: "https://nairobilife.fyi",
+    linkLabel: "nairobilife.fyi",
+    featured: true,
   },
   {
     name: "ChurchLib",
@@ -20,30 +37,13 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: "NairobiLife",
-    description: "A simulation game based in Nairobi. A browser life sim of one Nairobi day. Walk the city, take matatus, work, eat, pay rent and repay your SACCO loan, and see where the money went when you sleep.",
-    tags: ["Web", "Nairobi"],
-    href: "https://nairobilife.fyi",
-    linkLabel: "nairobilife.fyi",
-    featured: true,
-  },
-  {
-    name: "RoadBash",
+    name: "BibleLib",
+    period: "Aug 2025 - Present",
     description:
-      "A pseudo-3D motorcycle racing game built with Flutter and Flame. Race through the city and suburbs, keep left on Kenyan roads, and chase your rivals.",
-    tags: ["Flutter", "Flame", "Racing Game", "Supabase"],
-    href: "/roadbash",
-    linkLabel: "Play RoadBash",
-    featured: true,
-  },
-  {
-    name: "FlutterPainter",
-    description:
-      "A desktop vector drawing app for creating artwork and exporting it as Dart code for Flutter projects.",
-    tags: ["Flutter", "Dart", "Desktop", "Vector Art"],
-    href: "/flutterpainter",
-    linkLabel: "View FlutterPainter",
-    featured: true,
+      "A clean, offline-first Bible reader built for focused study. Explore a number of translations side by side, search instantly, personalize your reading experience, and keep everything organized with bookmarks, notes, reading history, and reusable scripture lists for sermons, studies, or personal devotions.",
+    tags: ["Kotlin", "Jetpack Compose", "Bible"],
+    href: "/biblelib",
+    linkLabel: "Learn more on BibleLib",
   },
   {
     name: "Mwalimu AI",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
       "YouPlot is your ultimate outdoor activity companion, designed for runners, cyclists, hikers, and walkers who want more than just a tracker. Plan your adventure before you leave, then let YouPlot keep you on schedule while you're out there.",
     tags: ["Kotlin", "Jetpack Compose", "Maps", "Open Street Maps", "GPX", "FIT"],
     href: "/youplot",
-    linkLabel: "View YouPlot",
+    linkLabel: "Learn more on YouPlot",
   },
   {
     name: "Salama Kit",
@@ -108,7 +108,7 @@ export const projects: Project[] = [
       "An offline-first church hymn app, 8 years in the making: Java → Flutter (2020) → native Kotlin/Compose and Swift/SwiftUI (2024), on a custom MERN backend.",
     tags: ["Kotlin", "Jetpack Compose", "SwiftUI", "MongoDB"],
     href: "/songlib",
-    linkLabel: "View SongLib",
+    linkLabel: "Learn more on SongLib",
     featured: true,
   },
   {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
       "An offline-first Swahili dictionary app, migrated from Flutter to native Kotlin/Jetpack Compose and Swift/SwiftUI on a Supabase backend.",
     tags: ["Kotlin", "Jetpack Compose", "SwiftUI", "Supabase"],
     href: "/swahilib",
-    linkLabel: "View SwahiLib",
+    linkLabel: "Learn more on SwahiLib",
     featured: true,
   },
   {

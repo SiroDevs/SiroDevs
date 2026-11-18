@@ -4,7 +4,6 @@ import {
   History,
   Layers,
   ListChecks,
-  MonitorPlay,
   Palette,
   PenLine,
 } from "lucide-react";
@@ -13,7 +12,7 @@ export const flutterPainterContent = {
   metadata: {
     title: "FlutterPainter — Vector Drawing for Flutter | SiroDevs",
     description:
-      "FlutterPainter is a desktop vector drawing app that exports artwork as Flutter-ready Dart code. Draw with shapes and paths, organize layers, and create custom painters for Flutter projects.",
+      "FlutterPainter is a desktop vector drawing app built with Flutter that exports artwork as Flutter-ready Dart code. Draw with shapes and paths, organize layers, and create custom painters for Flutter projects.",
   },
   navigation: {
     links: [
@@ -45,12 +44,12 @@ export const flutterPainterContent = {
     items: [
       {
         title: "The drawing workspace",
-        image: "/flutterpainter/editor.png",
+        image: "/flutterpainter/dart-export.png",
         alt: "FlutterPainter workspace with a rider illustration, shape tools, colour controls, and layers",
       },
       {
         title: "Dart code export",
-        image: "/flutterpainter/dart-export.png",
+        image: "/flutterpainter/editor.png",
         alt: "FlutterPainter code editor showing generated Dart painter and layer files",
       },
     ],

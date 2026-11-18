@@ -12,7 +12,7 @@ export const experience: Experience[] = [
       "Led sprint planning with business teams",
       "Mentored junior developers via code review.",
     ],
-    tags: ["Flutter", "NextJS", "Leadership"],
+    tags: ["Flutter", "NextJS", "Project Management", "Leadership"],
   },
   {
     company: "Pondus Ltd",
@@ -45,7 +45,7 @@ export const experience: Experience[] = [
       "Built .NET (C#) desktop clients for two e-learning platforms.",
       "Delivered on budget with optimized offline data storage.",
     ],
-    tags: [".NET", "C#"],
+    tags: [".NET", "C#", "Desktop"],
   },
 ];
 
@@ -57,7 +57,7 @@ export const earlierExperience: EarlierExperience[] = [
     bullets: [
       "Built a customer/sales system.",
     ],
-    tags: ["PHP", "Java"],
+    tags: ["PHP", "Java", "Mobile Management"],
   },
   {
     company: "Kenya School of TVET",
