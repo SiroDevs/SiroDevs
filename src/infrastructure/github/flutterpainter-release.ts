@@ -67,7 +67,9 @@ export async function getFlutterPainterReleaseCatalog(): Promise<ReleaseCatalog>
   const versionText = manifest?.ok
     ? await manifest.text().catch(() => "")
     : "";
-  const version = versionText.match(/^version:\s*['"]?(\d+\.\d+\.\d+)/m)?.[1];
+  const version = versionText.match(
+    /^version:\s*['"]?(\d+\.\d+\.\d+(?:\+\d+)?)(?:['"]|\s|$)/m,
+  )?.[1];
 
   if (version) {
     const catalog = createCatalog(`v${version}`);
