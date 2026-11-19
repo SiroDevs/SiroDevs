@@ -9,7 +9,7 @@ export const flutterPainterHowItWorksContent = {
       href: "#create-3d",
     },
     secondaryAction: {
-      label: "Back to FlutterPainter",
+      label: "Get FlutterPainter Now",
       href: "/flutterpainter",
     },
   },

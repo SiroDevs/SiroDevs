@@ -11,7 +11,7 @@ import {
 
 export const flutterPainterContent = {
   metadata: {
-    title: "FlutterPainter — Vector Drawing for Flutter | SiroDevs",
+    title: "FlutterPainter — Draw artwork. Export it as Dart.",
     description:
       "FlutterPainter is a desktop vector drawing app for creating editable artwork, turning layered shapes into 3D objects, and exporting Flutter-ready Dart code.",
   },
