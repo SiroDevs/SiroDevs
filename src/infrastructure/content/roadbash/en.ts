@@ -25,7 +25,7 @@ export const roadbashContent = {
     imageAlt: "Road Bash scene selection showing The City, a rider, and the Start Ride action",
     primaryAction: {
       label: "PLAY NOW ONLINE",
-      href: "https://roadbash.sirodevs.com",
+      href: "https://roadbash.web.app",
       external: true,
     },
     secondaryAction: {
@@ -130,6 +130,6 @@ export const roadbashContent = {
     description:
       "Choose a track, hold your line, and see where you land on the board.",
     label: "PLAY NOW ONLINE",
-    href: "https://roadbash.sirodevs.com",
+    href: "https://roadbash.web.app",
   },
 };
